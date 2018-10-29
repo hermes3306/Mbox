@@ -21,6 +21,9 @@ class mbox
 	$this->mail = new PHPMailer(true);
     $this->mail->isSMTP();
     $this->mail->SMTPDebug 	= 		2;
+	$this->mail->ContentType= 		"text/html";  
+    $this->mail->CharSet	=		"UTF-8"; 
+    $this->mail->Encoding 	= 		"base64";
     $this->mail->Host =           	$this->mail_props['Host'];
     $this->mail->Port =           	$this->mail_props['Port'];
     $this->mail->SMTPSecure =     	$this->mail_props['SMTPSecure'];
