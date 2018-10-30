@@ -20,13 +20,15 @@ $TO				= "6ave54street@gmail.com,At54Street@Gmail.com";
 $CC				= "nice9uy@hotmail.com";
 $BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
 
-$output			=	shell_exec('ifconfig');
-$hname  = trim(`hostname`);
-$myIP   =       gethostbyname(trim(`hostname` -I));
-$hname2 =  $hname . "(" .  $myIP . ")";
+$output = shell_exec('ifconfig');
 
-$Subject		= 	"Boot/Ip Info - $hname2";
-$Body			= 	nl2br($output);
+$hname  = trim(`hostname`);
+$myIP   = shell_exec('hostname -I');
+
+$Subject        =   "$myIP - $hname";
+$Body           =   nl2br($output);
+
+
 
 $props		=   array(
 	'Host'       =>   "smtp.gmail.com",
