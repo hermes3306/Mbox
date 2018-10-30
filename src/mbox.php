@@ -64,6 +64,10 @@ class mbox
     return $this->mail;
   }
 
+  public function setSubject($subject)
+  {
+    $this->mail->Subject =		$subject;
+  }
 
   /**
    * set Email Body.
@@ -94,6 +98,31 @@ class mbox
 	return $msgbody;
   }
 
+  public function setTemplate($fname, $inlines) {
+	$conts = file_get_contents($fname, __DIR__);
+	foreach($inlines as $key => $inline) {
+		$conts = str_replace($key,$inline,$conts);
+	}
+	$this->setBody($conts);
+  }
+
+
+  public function getHtmlMsgBody2($fields, $result) 
+  {
+	$dbtable = $this->getTableContent($fields, $result);
+	$template = file_get_contents('email.html', __DIR__);
+	$template = str_replace('{{Greeting}}',	'안녕하세요? ', $template);
+	$template = str_replace('{{Information1}}','Waffle 쿠폰 사용 현황은 다음과 같습니다', $template);
+	$template = str_replace('{{Information2}}', $dbtable, $template);
+
+	$template = str_replace('{{GO}}','세부정보확인', $template);
+
+	$template = str_replace('{{Information3}}','본 서비스에 대해서 추가적인 궁금한점이 있으시면 고객 지원 센터로 연락 부탁합니다', $template);
+	$template = str_replace('{{Goodbye}}','Good luck! Hope it works', $template);
+	return $template;
+  }
+
+	
   public function getTableContent($fields, $result) {
     $body =     '<table class="w3-table">';
     $body.=     '<tr class="w3-light-grey">';
@@ -113,13 +142,8 @@ class mbox
 	return $body;
   }
 
-  /**
-   * return execute Campaign 
-   * @return 
-   */
-  public function campaign($num, $subject)
+  public function getCampainData($num)
   {
-	$this->mail->Subject = $subject;
     $conn = mysqli_connect(
 		$this->mail_props['db.host'],
 		$this->mail_props['db.id'],
@@ -128,8 +152,57 @@ class mbox
 
  	$sql = $this->mail_props["camp$num.sql"];
     $result = mysqli_query($conn, $sql);
-	$body = $this->getHtmlMsgBody($this->mail_props["camp$num.field"], $result);
-	$this->setBody($body);
+	$body = $this->getTableContent($this->mail_props["camp$num.field"],$result);
+	return $body;
+  }
+
+  /**
+   * return execute Campaign 
+   * @return 
+   */
+  public function campaign($num, $subject)
+  {
+	$this->mail->Subject = $subject;
+    //$this->setSubject("Daily Report of ". date("Y/m/d"));
+
+	switch($num)  {
+    	case 1: 
+    		$inlines = array(
+        		"{{inline1}}" => "Daily Statistics Information",
+        		"{{inline2}}" => date('l jS \of F Y h:i:s A'),
+        		"{{inline3}}" => "---------------------------------------------- ",
+        		"{{inline4}}" => $this->getCampainData($num),
+    		);
+			$this->setTemplate('email1.html', $inlines);
+			break;
+		case 2:
+		case 3:
+    		$inlines = array(
+        		"[CLIENTS.COMPANY_NAME]" => "LEE& Company",
+        		"[Writer]" => 	"Jason Park",
+        		"[[LIST_VIEW]]" => $this->getCampainData($num),
+    		);
+			$this->setTemplate('email2.html', $inlines);
+			break;
+		case 4:
+    		$inlines = array(
+        		"{{inline1}}" => "일간 통계 정보",
+        		"{{inline2}}" => date_default_timezone_set('UTC'),
+        		"{{inline3}}" => "---------------------------------------------- ",
+        		"{{inline4}}" => $this->getCampainData($num),
+    		);
+			$this->setTemplate('email3.html', $inlines);
+			break;
+		case 5:
+    		$inlines = array(
+        		"{{inline1}}" => "월간 방문자/이메일 현황 통계 정보",
+        		"{{inline2}}" =>  date('F Y'),
+        		"{{inline3}}" => "---------------------------------------------- ",
+        		"{{inline4}}" => $this->getCampainData($num),
+    		);
+			$this->setTemplate('email3.html', $inlines);
+			break;
+	}
   }
 
   /**
