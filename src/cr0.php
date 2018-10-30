@@ -26,7 +26,7 @@ $myIP   =       gethostbyname(trim(`hostname`));
 $hname2 =  $hname . "(" .  $myIP . ")";
 
 $Subject		= 	"Boot/Ip Info - $hname2";
-$Body			= 	$output;
+$Body			= 	nl2br($output);
 
 $props		=   array(
 	'Host'       =>   "smtp.gmail.com",
