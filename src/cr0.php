@@ -20,7 +20,7 @@ $TO				= "6ave54street@gmail.com,At54Street@Gmail.com";
 $CC				= "nice9uy@hotmail.com";
 $BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
 
-$output			=	shell_exec('arp');
+$output			=	shell_exec('ifconfig');
 
 $Subject		= 	"Pi(raspberrypi 0) - arp";
 $Body			= 	$output;
