@@ -32,12 +32,18 @@ class mbox
     $this->mail->Password =       	$this->mail_props['Password'];
     $this->mail->setFrom          	($this->mail_props['setFrom']);
 
+	//$this->mail->addAddress("undisclosed-recipients:;");
     foreach ($this->mail_props['Address'] as $addr) {
         $this->mail->addAddress   ($addr);
     }
 
-  	$this->mail->addCC            	($this->mail_props['CC']);
-    $this->mail->addBCC           	($this->mail_props['BCC']);
+    foreach ($this->mail_props['CC'] as $addr) {
+        $this->mail->addCC   ($addr);
+    }
+
+    foreach ($this->mail_props['BCC'] as $addr) {
+        $this->mail->addBCC   ($addr);
+    }
 
     $this->mail->isHTML           	($this->mail_props['isHtml']);
     $this->mail->Subject =       	$this->mail_props['Subject'];
