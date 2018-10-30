@@ -21,8 +21,11 @@ $CC				= "nice9uy@hotmail.com";
 $BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
 
 $output			=	shell_exec('ifconfig');
+$hname  = trim(`hostname`);
+$myIP   =       gethostbyname(trim(`hostname`));
+$hname2 =  $hname . "(" .  $myIP . ")";
 
-$Subject		= 	"Pi(raspberrypi 0) - arp";
+$Subject		= 	"Boot/Ip Info - $hname2";
 $Body			= 	$output;
 
 $props		=   array(
