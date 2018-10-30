@@ -22,7 +22,7 @@ $BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
 
 $output			=	shell_exec('ifconfig');
 $hname  = trim(`hostname`);
-$myIP   =       gethostbyname(trim(`hostname`));
+$myIP   =       gethostbyname(trim(`hostname` -I));
 $hname2 =  $hname . "(" .  $myIP . ")";
 
 $Subject		= 	"Boot/Ip Info - $hname2";
