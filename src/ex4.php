@@ -8,4 +8,3 @@
     $mbox->campaign(6, "캠페인 5 - Waffle 쿠폰 사용 현황");
     $mbox->send();
 ?>
-

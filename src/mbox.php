@@ -193,7 +193,7 @@ class mbox
     		);
 			$this->setTemplate('email3.html', $inlines);
 			break;
-		case 5:
+		default:
     		$inlines = array(
         		"{{inline1}}" => "월간 방문자/이메일 현황 통계 정보",
         		"{{inline2}}" =>  date('F Y'),
