@@ -20,7 +20,7 @@ $TO				= "6ave54street@gmail.com,At54Street@Gmail.com";
 $CC				= "nice9uy@hotmail.com";
 $BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
 
-$output = shell_exec('ifconfig');
+$output = shell_exec('/sbin/ifconfig');
 
 $hname  = trim(`hostname`);
 $myIP   = shell_exec('hostname -I');

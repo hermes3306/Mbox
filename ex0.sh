@@ -1,3 +1,4 @@
 #!/bin/bash
 export mbox_home=`pwd`
-php src/ex0.php
+cd  /home/pi/code/MBox
+php /home/pi/code/MBox/src/ex0.php

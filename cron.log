@@ -1,0 +1,26 @@
+Could not open input file: src/ex3.php
+sh: 1: ifconfig: not found
+PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Message body empty in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php:1411
+Stack trace:
+#0 /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php(1316): PHPMailer\PHPMailer\PHPMailer->preSend()
+#1 /home/pi/code/MBox/src/cr0.php(72): PHPMailer\PHPMailer\PHPMailer->send()
+#2 {main}
+  thrown in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1411
+PHP Warning:  require(/home/pi/src/mbox.php): failed to open stream: No such file or directory in /home/pi/code/MBox/src/ex3.php on line 4
+PHP Fatal error:  require(): Failed opening required '/home/pi/src/mbox.php' (include_path='.:/usr/share/php') in /home/pi/code/MBox/src/ex3.php on line 4
+sh: 1: ifconfig: not found
+PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Message body empty in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php:1411
+Stack trace:
+#0 /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php(1316): PHPMailer\PHPMailer\PHPMailer->preSend()
+#1 /home/pi/code/MBox/src/cr0.php(72): PHPMailer\PHPMailer\PHPMailer->send()
+#2 {main}
+  thrown in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1411
+PHP Warning:  require(/home/pi/src/mbox.php): failed to open stream: No such file or directory in /home/pi/code/MBox/src/ex3.php on line 4
+PHP Fatal error:  require(): Failed opening required '/home/pi/src/mbox.php' (include_path='.:/usr/share/php') in /home/pi/code/MBox/src/ex3.php on line 4
+sh: 1: ifconfig: not found
+PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Message body empty in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php:1411
+Stack trace:
+#0 /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php(1316): PHPMailer\PHPMailer\PHPMailer->preSend()
+#1 /home/pi/code/MBox/src/cr0.php(72): PHPMailer\PHPMailer\PHPMailer->send()
+#2 {main}
+  thrown in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1411
