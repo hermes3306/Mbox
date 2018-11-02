@@ -22,13 +22,14 @@ $BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
 
 $output = shell_exec('/sbin/ifconfig');
 $dt = date("y/m/d, h:i:sa");
+$ti = date("h:i:sa");
 
 $hname  = trim(`hostname`);
 $myIP   = shell_exec('hostname -I');
 
-$Subject        =   "$myIP - $hname";
+$Subject        =   "$myIP - $hname ($ti)";
 $Body           =   nl2br($output);
-$Body		=   $dt . " - $hname <br>" . $Body;
+$Body		=   $dt . "<br><br> - $hname <br>1" . $Body;
 
 
 
