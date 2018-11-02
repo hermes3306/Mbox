@@ -16,9 +16,9 @@ require     $mbox_home . '/vendor/autoload.php';
  * 
  *
  */
-$TO				= "6ave54street@gmail.com,At54Street@Gmail.com";
-$CC				= "nice9uy@hotmail.com";
-$BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
+$TO				= "At54Street@Gmail.com";
+$CC				= "6ave54street@gmail.com";
+$BCC 			= "nice9uy@hotmail.com";
 
 $output = shell_exec('/sbin/ifconfig');
 $dt = date("y/m/d, h:i:sa");
@@ -27,10 +27,9 @@ $ti = date("h:i:sa");
 $hname  = trim(`hostname`);
 $myIP   = shell_exec('hostname -I');
 
-$Subject        =   "$myIP - $hname ($ti)";
+$Subject        =   "$hname-$hname($ti)";
 $Body           =   nl2br($output);
-$Body		=   $dt . "<br><br> - $hname <br>1" . $Body;
-
+$Body		=   $dt . "<br><br> - $hname <br>" . $Body;
 
 
 $props		=   array(
