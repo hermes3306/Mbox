@@ -5,6 +5,6 @@
 # Example: root:your_login@your.domain:mailhub.your.domain[:port]
 # where [:port] is an optional port number that defaults to 25.
 
-root:pi@z3:smtp.gmail.com:587
-www-data:z3@z1:smtp.gmail.com:587
+root:pi@w1:smtp.gmail.com:587
+www-data:w1@z1:smtp.gmail.com:587
 

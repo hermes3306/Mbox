@@ -24,3 +24,360 @@ Stack trace:
 #1 /home/pi/code/MBox/src/cr0.php(72): PHPMailer\PHPMailer\PHPMailer->send()
 #2 {main}
   thrown in /home/pi/code/MBox/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1411
+/home/pi/code/MBox/cr0.sh: line 5:  1773 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1823 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2095 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2136 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2210 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2296 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:   905 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:   937 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1018 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1047 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1152 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1181 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1288 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1316 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1419 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1449 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1554 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1584 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1689 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1719 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1823 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1853 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1958 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1986 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2141 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2169 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2274 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2303 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2410 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2438 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2542 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2571 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2675 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2704 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  2805 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  2834 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  5215 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  5243 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  5345 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  5373 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  5480 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  5516 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  5777 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  5805 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1177 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/ex3.sh: line 4:  1206 Segmentation fault      php /home/pi/code/MBox/src/ex3.php
+/home/pi/code/MBox/cr0.sh: line 5:  1058 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1089 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1107 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1160 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1048 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1143 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1162 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1191 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1234 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1264 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1293 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1335 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1352 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1380 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1422 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1453 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1482 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1522 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1538 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1567 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1608 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1638 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1667 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1710 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1726 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1754 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1797 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1828 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1857 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1899 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1918 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1948 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1989 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2021 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2051 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2094 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2111 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2140 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2182 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2212 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2241 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2282 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2298 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2328 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2371 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2401 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2476 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2519 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2536 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  2566 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1029 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1059 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1087 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1106 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1159 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1174 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1189 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1241 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1271 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1287 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1340 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1355 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1372 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1426 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1456 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1076 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1117 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1149 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1282 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1352 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1368 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1396 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1438 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1469 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1497 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1539 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+/home/pi/code/MBox/cr0.sh: line 5:  1556 Segmentation fault      php /home/pi/code/MBox/src/cr0.php
+2018-11-03 08:00:11	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:11	CLIENT -> SERVER: EHLO w1
+2018-11-03 08:00:12	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [118.221.137.114]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2018-11-03 08:00:12	CLIENT -> SERVER: STARTTLS
+2018-11-03 08:00:12	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2018-11-03 08:00:12	CLIENT -> SERVER: EHLO w1
+2018-11-03 08:00:12	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [118.221.137.114]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2018-11-03 08:00:12	CLIENT -> SERVER: AUTH LOGIN
+2018-11-03 08:00:12	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2018-11-03 08:00:12	CLIENT -> SERVER: <credentials hidden>
+2018-11-03 08:00:12	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2018-11-03 08:00:12	CLIENT -> SERVER: <credentials hidden>
+2018-11-03 08:00:13	SERVER -> CLIENT: 235 2.7.0 Accepted
+2018-11-03 08:00:13	CLIENT -> SERVER: MAIL FROM:<6ave54street@gmail.com>
+2018-11-03 08:00:13	SERVER -> CLIENT: 250 2.1.0 OK d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:13	CLIENT -> SERVER: RCPT TO:<At54Street@Gmail.com>
+2018-11-03 08:00:13	SERVER -> CLIENT: 250 2.1.5 OK d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:13	CLIENT -> SERVER: RCPT TO:<6ave54street@gmail.com>
+2018-11-03 08:00:14	SERVER -> CLIENT: 250 2.1.5 OK d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:14	CLIENT -> SERVER: RCPT TO:<nice9uy@hotmail.com>
+2018-11-03 08:00:14	SERVER -> CLIENT: 250 2.1.5 OK d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:14	CLIENT -> SERVER: DATA
+2018-11-03 08:00:14	SERVER -> CLIENT: 354  Go ahead d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:14	CLIENT -> SERVER: Date: Sat, 3 Nov 2018 17:00:11 +0900
+2018-11-03 08:00:14	CLIENT -> SERVER: To: At54Street@Gmail.com
+2018-11-03 08:00:14	CLIENT -> SERVER: From: 6ave54street@gmail.com
+2018-11-03 08:00:14	CLIENT -> SERVER: Cc: 6ave54street@gmail.com
+2018-11-03 08:00:14	CLIENT -> SERVER: Subject: w1-w1(05:00:11pm)
+2018-11-03 08:00:14	CLIENT -> SERVER: Message-ID: <XtaebBgn5F03Ec6wRKa6BvNgCYGGBkgdT0ZSYmqIIg@w1>
+2018-11-03 08:00:14	CLIENT -> SERVER: X-Mailer: PHPMailer 6.0.5 (https://github.com/PHPMailer/PHPMailer)
+2018-11-03 08:00:14	CLIENT -> SERVER: MIME-Version: 1.0
+2018-11-03 08:00:14	CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+2018-11-03 08:00:14	CLIENT -> SERVER: Content-Transfer-Encoding: base64
+2018-11-03 08:00:14	CLIENT -> SERVER:
+2018-11-03 08:00:14	CLIENT -> SERVER: MTgvMTEvMDMsIDA1OjAwOjExcG08YnI+PGJyPiAtIHcxIDxicj5ldGgwOiBmbGFncz00MDk5PFVQ
+2018-11-03 08:00:14	CLIENT -> SERVER: LEJST0FEQ0FTVCxNVUxUSUNBU1Q+ICBtdHUgMTUwMDxiciAvPgogICAgICAgIGV0aGVyIGI4OjI3
+2018-11-03 08:00:14	CLIENT -> SERVER: OmViOmU0OjRjOjUyICB0eHF1ZXVlbGVuIDEwMDAgIChFdGhlcm5ldCk8YnIgLz4KICAgICAgICBS
+2018-11-03 08:00:14	CLIENT -> SERVER: WCBwYWNrZXRzIDAgIGJ5dGVzIDAgKDAuMCBCKTxiciAvPgogICAgICAgIFJYIGVycm9ycyAwICBk
+2018-11-03 08:00:14	CLIENT -> SERVER: cm9wcGVkIDAgIG92ZXJydW5zIDAgIGZyYW1lIDA8YnIgLz4KICAgICAgICBUWCBwYWNrZXRzIDAg
+2018-11-03 08:00:14	CLIENT -> SERVER: IGJ5dGVzIDAgKDAuMCBCKTxiciAvPgogICAgICAgIFRYIGVycm9ycyAwICBkcm9wcGVkIDAgb3Zl
+2018-11-03 08:00:14	CLIENT -> SERVER: cnJ1bnMgMCAgY2FycmllciAwICBjb2xsaXNpb25zIDA8YnIgLz4KPGJyIC8+CmxvOiBmbGFncz03
+2018-11-03 08:00:14	CLIENT -> SERVER: MzxVUCxMT09QQkFDSyxSVU5OSU5HPiAgbXR1IDY1NTM2PGJyIC8+CiAgICAgICAgaW5ldCAxMjcu
+2018-11-03 08:00:14	CLIENT -> SERVER: MC4wLjEgIG5ldG1hc2sgMjU1LjAuMC4wPGJyIC8+CiAgICAgICAgaW5ldDYgOjoxICBwcmVmaXhs
+2018-11-03 08:00:14	CLIENT -> SERVER: ZW4gMTI4ICBzY29wZWlkIDB4MTA8aG9zdD48YnIgLz4KICAgICAgICBsb29wICB0eHF1ZXVlbGVu
+2018-11-03 08:00:14	CLIENT -> SERVER: IDEwMDAgIChMb2NhbCBMb29wYmFjayk8YnIgLz4KICAgICAgICBSWCBwYWNrZXRzIDkgIGJ5dGVz
+2018-11-03 08:00:14	CLIENT -> SERVER: IDUyNCAoNTI0LjAgQik8YnIgLz4KICAgICAgICBSWCBlcnJvcnMgMCAgZHJvcHBlZCAwICBvdmVy
+2018-11-03 08:00:14	CLIENT -> SERVER: cnVucyAwICBmcmFtZSAwPGJyIC8+CiAgICAgICAgVFggcGFja2V0cyA5ICBieXRlcyA1MjQgKDUy
+2018-11-03 08:00:14	CLIENT -> SERVER: NC4wIEIpPGJyIC8+CiAgICAgICAgVFggZXJyb3JzIDAgIGRyb3BwZWQgMCBvdmVycnVucyAwICBj
+2018-11-03 08:00:14	CLIENT -> SERVER: YXJyaWVyIDAgIGNvbGxpc2lvbnMgMDxiciAvPgo8YnIgLz4Kd2xhbjA6IGZsYWdzPTQxNjM8VVAs
+2018-11-03 08:00:14	CLIENT -> SERVER: QlJPQURDQVNULFJVTk5JTkcsTVVMVElDQVNUPiAgbXR1IDE1MDA8YnIgLz4KICAgICAgICBpbmV0
+2018-11-03 08:00:14	CLIENT -> SERVER: IDE5Mi4xNjguMzUuMTk2ICBuZXRtYXNrIDI1NS4yNTUuMjU1LjAgIGJyb2FkY2FzdCAxOTIuMTY4
+2018-11-03 08:00:14	CLIENT -> SERVER: LjM1LjI1NTxiciAvPgogICAgICAgIGluZXQ2IGZlODA6Ojg2NWM6Y2M1OTo0ODVlOjFiODUgIHBy
+2018-11-03 08:00:14	CLIENT -> SERVER: ZWZpeGxlbiA2NCAgc2NvcGVpZCAweDIwPGxpbms+PGJyIC8+CiAgICAgICAgZXRoZXIgYjg6Mjc6
+2018-11-03 08:00:14	CLIENT -> SERVER: ZWI6YjE6MTk6MDcgIHR4cXVldWVsZW4gMTAwMCAgKEV0aGVybmV0KTxiciAvPgogICAgICAgIFJY
+2018-11-03 08:00:14	CLIENT -> SERVER: IHBhY2tldHMgMTA2MzEgIGJ5dGVzIDg2NzE0ODcgKDguMiBNaUIpPGJyIC8+CiAgICAgICAgUlgg
+2018-11-03 08:00:14	CLIENT -> SERVER: ZXJyb3JzIDAgIGRyb3BwZWQgMCAgb3ZlcnJ1bnMgMCAgZnJhbWUgMDxiciAvPgogICAgICAgIFRY
+2018-11-03 08:00:14	CLIENT -> SERVER: IHBhY2tldHMgNjE1MiAgYnl0ZXMgMTQzNjM1NiAoMS4zIE1pQik8YnIgLz4KICAgICAgICBUWCBl
+2018-11-03 08:00:14	CLIENT -> SERVER: cnJvcnMgMCAgZHJvcHBlZCAwIG92ZXJydW5zIDAgIGNhcnJpZXIgMCAgY29sbGlzaW9ucyAwPGJy
+2018-11-03 08:00:14	CLIENT -> SERVER: IC8+CjxiciAvPgo=
+2018-11-03 08:00:14	CLIENT -> SERVER:
+2018-11-03 08:00:14	CLIENT -> SERVER: .
+2018-11-03 08:00:15	SERVER -> CLIENT: 250 2.0.0 OK 1541232015 d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:00:15	CLIENT -> SERVER: QUIT
+2018-11-03 08:00:15	SERVER -> CLIENT: 221 2.0.0 closing connection d197-v6sm54918542pga.1 - gsmtp
+2018-11-03 08:10:11	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:11	CLIENT -> SERVER: EHLO w1
+2018-11-03 08:10:12	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [118.221.137.114]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2018-11-03 08:10:12	CLIENT -> SERVER: STARTTLS
+2018-11-03 08:10:12	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2018-11-03 08:10:12	CLIENT -> SERVER: EHLO w1
+2018-11-03 08:10:12	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [118.221.137.114]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2018-11-03 08:10:12	CLIENT -> SERVER: AUTH LOGIN
+2018-11-03 08:10:12	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2018-11-03 08:10:12	CLIENT -> SERVER: <credentials hidden>
+2018-11-03 08:10:13	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2018-11-03 08:10:13	CLIENT -> SERVER: <credentials hidden>
+2018-11-03 08:10:13	SERVER -> CLIENT: 235 2.7.0 Accepted
+2018-11-03 08:10:13	CLIENT -> SERVER: MAIL FROM:<6ave54street@gmail.com>
+2018-11-03 08:10:13	SERVER -> CLIENT: 250 2.1.0 OK s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:13	CLIENT -> SERVER: RCPT TO:<At54Street@Gmail.com>
+2018-11-03 08:10:13	SERVER -> CLIENT: 250 2.1.5 OK s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:13	CLIENT -> SERVER: RCPT TO:<6ave54street@gmail.com>
+2018-11-03 08:10:14	SERVER -> CLIENT: 250 2.1.5 OK s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:14	CLIENT -> SERVER: RCPT TO:<nice9uy@hotmail.com>
+2018-11-03 08:10:14	SERVER -> CLIENT: 250 2.1.5 OK s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:14	CLIENT -> SERVER: DATA
+2018-11-03 08:10:14	SERVER -> CLIENT: 354  Go ahead s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:14	CLIENT -> SERVER: Date: Sat, 3 Nov 2018 17:10:11 +0900
+2018-11-03 08:10:14	CLIENT -> SERVER: To: At54Street@Gmail.com
+2018-11-03 08:10:14	CLIENT -> SERVER: From: 6ave54street@gmail.com
+2018-11-03 08:10:14	CLIENT -> SERVER: Cc: 6ave54street@gmail.com
+2018-11-03 08:10:14	CLIENT -> SERVER: Subject: w1-w1(05:10:11pm)
+2018-11-03 08:10:14	CLIENT -> SERVER: Message-ID: <zZr98mdE3q71IPchMaacbmXBWC2fsRNvROzYwM7t0@w1>
+2018-11-03 08:10:14	CLIENT -> SERVER: X-Mailer: PHPMailer 6.0.5 (https://github.com/PHPMailer/PHPMailer)
+2018-11-03 08:10:14	CLIENT -> SERVER: MIME-Version: 1.0
+2018-11-03 08:10:14	CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+2018-11-03 08:10:14	CLIENT -> SERVER: Content-Transfer-Encoding: base64
+2018-11-03 08:10:14	CLIENT -> SERVER:
+2018-11-03 08:10:14	CLIENT -> SERVER: MTgvMTEvMDMsIDA1OjEwOjExcG08YnI+PGJyPiAtIHcxIDxicj5ldGgwOiBmbGFncz00MDk5PFVQ
+2018-11-03 08:10:14	CLIENT -> SERVER: LEJST0FEQ0FTVCxNVUxUSUNBU1Q+ICBtdHUgMTUwMDxiciAvPgogICAgICAgIGV0aGVyIGI4OjI3
+2018-11-03 08:10:14	CLIENT -> SERVER: OmViOmU0OjRjOjUyICB0eHF1ZXVlbGVuIDEwMDAgIChFdGhlcm5ldCk8YnIgLz4KICAgICAgICBS
+2018-11-03 08:10:14	CLIENT -> SERVER: WCBwYWNrZXRzIDAgIGJ5dGVzIDAgKDAuMCBCKTxiciAvPgogICAgICAgIFJYIGVycm9ycyAwICBk
+2018-11-03 08:10:14	CLIENT -> SERVER: cm9wcGVkIDAgIG92ZXJydW5zIDAgIGZyYW1lIDA8YnIgLz4KICAgICAgICBUWCBwYWNrZXRzIDAg
+2018-11-03 08:10:14	CLIENT -> SERVER: IGJ5dGVzIDAgKDAuMCBCKTxiciAvPgogICAgICAgIFRYIGVycm9ycyAwICBkcm9wcGVkIDAgb3Zl
+2018-11-03 08:10:14	CLIENT -> SERVER: cnJ1bnMgMCAgY2FycmllciAwICBjb2xsaXNpb25zIDA8YnIgLz4KPGJyIC8+CmxvOiBmbGFncz03
+2018-11-03 08:10:14	CLIENT -> SERVER: MzxVUCxMT09QQkFDSyxSVU5OSU5HPiAgbXR1IDY1NTM2PGJyIC8+CiAgICAgICAgaW5ldCAxMjcu
+2018-11-03 08:10:14	CLIENT -> SERVER: MC4wLjEgIG5ldG1hc2sgMjU1LjAuMC4wPGJyIC8+CiAgICAgICAgaW5ldDYgOjoxICBwcmVmaXhs
+2018-11-03 08:10:14	CLIENT -> SERVER: ZW4gMTI4ICBzY29wZWlkIDB4MTA8aG9zdD48YnIgLz4KICAgICAgICBsb29wICB0eHF1ZXVlbGVu
+2018-11-03 08:10:14	CLIENT -> SERVER: IDEwMDAgIChMb2NhbCBMb29wYmFjayk8YnIgLz4KICAgICAgICBSWCBwYWNrZXRzIDkgIGJ5dGVz
+2018-11-03 08:10:14	CLIENT -> SERVER: IDUyNCAoNTI0LjAgQik8YnIgLz4KICAgICAgICBSWCBlcnJvcnMgMCAgZHJvcHBlZCAwICBvdmVy
+2018-11-03 08:10:14	CLIENT -> SERVER: cnVucyAwICBmcmFtZSAwPGJyIC8+CiAgICAgICAgVFggcGFja2V0cyA5ICBieXRlcyA1MjQgKDUy
+2018-11-03 08:10:14	CLIENT -> SERVER: NC4wIEIpPGJyIC8+CiAgICAgICAgVFggZXJyb3JzIDAgIGRyb3BwZWQgMCBvdmVycnVucyAwICBj
+2018-11-03 08:10:14	CLIENT -> SERVER: YXJyaWVyIDAgIGNvbGxpc2lvbnMgMDxiciAvPgo8YnIgLz4Kd2xhbjA6IGZsYWdzPTQxNjM8VVAs
+2018-11-03 08:10:14	CLIENT -> SERVER: QlJPQURDQVNULFJVTk5JTkcsTVVMVElDQVNUPiAgbXR1IDE1MDA8YnIgLz4KICAgICAgICBpbmV0
+2018-11-03 08:10:14	CLIENT -> SERVER: IDE5Mi4xNjguMzUuMTk2ICBuZXRtYXNrIDI1NS4yNTUuMjU1LjAgIGJyb2FkY2FzdCAxOTIuMTY4
+2018-11-03 08:10:14	CLIENT -> SERVER: LjM1LjI1NTxiciAvPgogICAgICAgIGluZXQ2IGZlODA6Ojg2NWM6Y2M1OTo0ODVlOjFiODUgIHBy
+2018-11-03 08:10:14	CLIENT -> SERVER: ZWZpeGxlbiA2NCAgc2NvcGVpZCAweDIwPGxpbms+PGJyIC8+CiAgICAgICAgZXRoZXIgYjg6Mjc6
+2018-11-03 08:10:14	CLIENT -> SERVER: ZWI6YjE6MTk6MDcgIHR4cXVldWVsZW4gMTAwMCAgKEV0aGVybmV0KTxiciAvPgogICAgICAgIFJY
+2018-11-03 08:10:14	CLIENT -> SERVER: IHBhY2tldHMgMTEyNTQgIGJ5dGVzIDg3NDg5NzAgKDguMyBNaUIpPGJyIC8+CiAgICAgICAgUlgg
+2018-11-03 08:10:14	CLIENT -> SERVER: ZXJyb3JzIDAgIGRyb3BwZWQgMCAgb3ZlcnJ1bnMgMCAgZnJhbWUgMDxiciAvPgogICAgICAgIFRY
+2018-11-03 08:10:14	CLIENT -> SERVER: IHBhY2tldHMgNjQwMyAgYnl0ZXMgMTQ3Njg1OCAoMS40IE1pQik8YnIgLz4KICAgICAgICBUWCBl
+2018-11-03 08:10:14	CLIENT -> SERVER: cnJvcnMgMCAgZHJvcHBlZCAwIG92ZXJydW5zIDAgIGNhcnJpZXIgMCAgY29sbGlzaW9ucyAwPGJy
+2018-11-03 08:10:14	CLIENT -> SERVER: IC8+CjxiciAvPgo=
+2018-11-03 08:10:14	CLIENT -> SERVER:
+2018-11-03 08:10:14	CLIENT -> SERVER: .
+2018-11-03 08:10:15	SERVER -> CLIENT: 250 2.0.0 OK 1541232615 s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:10:15	CLIENT -> SERVER: QUIT
+2018-11-03 08:10:15	SERVER -> CLIENT: 221 2.0.0 closing connection s85-v6sm51464043pfi.15 - gsmtp
+2018-11-03 08:20:12	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:12	CLIENT -> SERVER: EHLO w1
+2018-11-03 08:20:12	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [118.221.137.114]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2018-11-03 08:20:12	CLIENT -> SERVER: STARTTLS
+2018-11-03 08:20:12	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2018-11-03 08:20:12	CLIENT -> SERVER: EHLO w1
+2018-11-03 08:20:13	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [118.221.137.114]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2018-11-03 08:20:13	CLIENT -> SERVER: AUTH LOGIN
+2018-11-03 08:20:13	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2018-11-03 08:20:13	CLIENT -> SERVER: <credentials hidden>
+2018-11-03 08:20:13	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2018-11-03 08:20:13	CLIENT -> SERVER: <credentials hidden>
+2018-11-03 08:20:13	SERVER -> CLIENT: 235 2.7.0 Accepted
+2018-11-03 08:20:13	CLIENT -> SERVER: MAIL FROM:<6ave54street@gmail.com>
+2018-11-03 08:20:14	SERVER -> CLIENT: 250 2.1.0 OK k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:14	CLIENT -> SERVER: RCPT TO:<At54Street@Gmail.com>
+2018-11-03 08:20:14	SERVER -> CLIENT: 250 2.1.5 OK k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:14	CLIENT -> SERVER: RCPT TO:<6ave54street@gmail.com>
+2018-11-03 08:20:14	SERVER -> CLIENT: 250 2.1.5 OK k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:14	CLIENT -> SERVER: RCPT TO:<nice9uy@hotmail.com>
+2018-11-03 08:20:14	SERVER -> CLIENT: 250 2.1.5 OK k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:14	CLIENT -> SERVER: DATA
+2018-11-03 08:20:15	SERVER -> CLIENT: 354  Go ahead k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:15	CLIENT -> SERVER: Date: Sat, 3 Nov 2018 17:20:11 +0900
+2018-11-03 08:20:15	CLIENT -> SERVER: To: At54Street@Gmail.com
+2018-11-03 08:20:15	CLIENT -> SERVER: From: 6ave54street@gmail.com
+2018-11-03 08:20:15	CLIENT -> SERVER: Cc: 6ave54street@gmail.com
+2018-11-03 08:20:15	CLIENT -> SERVER: Subject: w1-w1(05:20:11pm)
+2018-11-03 08:20:15	CLIENT -> SERVER: Message-ID: <6K1tXWZ1puID8fZxkAAyujA4igujI26VXxpSeJYOEu0@w1>
+2018-11-03 08:20:15	CLIENT -> SERVER: X-Mailer: PHPMailer 6.0.5 (https://github.com/PHPMailer/PHPMailer)
+2018-11-03 08:20:15	CLIENT -> SERVER: MIME-Version: 1.0
+2018-11-03 08:20:15	CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+2018-11-03 08:20:15	CLIENT -> SERVER: Content-Transfer-Encoding: base64
+2018-11-03 08:20:15	CLIENT -> SERVER:
+2018-11-03 08:20:15	CLIENT -> SERVER: MTgvMTEvMDMsIDA1OjIwOjExcG08YnI+PGJyPiAtIHcxIDxicj5ldGgwOiBmbGFncz00MDk5PFVQ
+2018-11-03 08:20:15	CLIENT -> SERVER: LEJST0FEQ0FTVCxNVUxUSUNBU1Q+ICBtdHUgMTUwMDxiciAvPgogICAgICAgIGV0aGVyIGI4OjI3
+2018-11-03 08:20:15	CLIENT -> SERVER: OmViOmU0OjRjOjUyICB0eHF1ZXVlbGVuIDEwMDAgIChFdGhlcm5ldCk8YnIgLz4KICAgICAgICBS
+2018-11-03 08:20:15	CLIENT -> SERVER: WCBwYWNrZXRzIDAgIGJ5dGVzIDAgKDAuMCBCKTxiciAvPgogICAgICAgIFJYIGVycm9ycyAwICBk
+2018-11-03 08:20:15	CLIENT -> SERVER: cm9wcGVkIDAgIG92ZXJydW5zIDAgIGZyYW1lIDA8YnIgLz4KICAgICAgICBUWCBwYWNrZXRzIDAg
+2018-11-03 08:20:15	CLIENT -> SERVER: IGJ5dGVzIDAgKDAuMCBCKTxiciAvPgogICAgICAgIFRYIGVycm9ycyAwICBkcm9wcGVkIDAgb3Zl
+2018-11-03 08:20:15	CLIENT -> SERVER: cnJ1bnMgMCAgY2FycmllciAwICBjb2xsaXNpb25zIDA8YnIgLz4KPGJyIC8+CmxvOiBmbGFncz03
+2018-11-03 08:20:15	CLIENT -> SERVER: MzxVUCxMT09QQkFDSyxSVU5OSU5HPiAgbXR1IDY1NTM2PGJyIC8+CiAgICAgICAgaW5ldCAxMjcu
+2018-11-03 08:20:15	CLIENT -> SERVER: MC4wLjEgIG5ldG1hc2sgMjU1LjAuMC4wPGJyIC8+CiAgICAgICAgaW5ldDYgOjoxICBwcmVmaXhs
+2018-11-03 08:20:15	CLIENT -> SERVER: ZW4gMTI4ICBzY29wZWlkIDB4MTA8aG9zdD48YnIgLz4KICAgICAgICBsb29wICB0eHF1ZXVlbGVu
+2018-11-03 08:20:15	CLIENT -> SERVER: IDEwMDAgIChMb2NhbCBMb29wYmFjayk8YnIgLz4KICAgICAgICBSWCBwYWNrZXRzIDkgIGJ5dGVz
+2018-11-03 08:20:15	CLIENT -> SERVER: IDUyNCAoNTI0LjAgQik8YnIgLz4KICAgICAgICBSWCBlcnJvcnMgMCAgZHJvcHBlZCAwICBvdmVy
+2018-11-03 08:20:15	CLIENT -> SERVER: cnVucyAwICBmcmFtZSAwPGJyIC8+CiAgICAgICAgVFggcGFja2V0cyA5ICBieXRlcyA1MjQgKDUy
+2018-11-03 08:20:15	CLIENT -> SERVER: NC4wIEIpPGJyIC8+CiAgICAgICAgVFggZXJyb3JzIDAgIGRyb3BwZWQgMCBvdmVycnVucyAwICBj
+2018-11-03 08:20:15	CLIENT -> SERVER: YXJyaWVyIDAgIGNvbGxpc2lvbnMgMDxiciAvPgo8YnIgLz4Kd2xhbjA6IGZsYWdzPTQxNjM8VVAs
+2018-11-03 08:20:15	CLIENT -> SERVER: QlJPQURDQVNULFJVTk5JTkcsTVVMVElDQVNUPiAgbXR1IDE1MDA8YnIgLz4KICAgICAgICBpbmV0
+2018-11-03 08:20:15	CLIENT -> SERVER: IDE5Mi4xNjguMzUuMTk2ICBuZXRtYXNrIDI1NS4yNTUuMjU1LjAgIGJyb2FkY2FzdCAxOTIuMTY4
+2018-11-03 08:20:15	CLIENT -> SERVER: LjM1LjI1NTxiciAvPgogICAgICAgIGluZXQ2IGZlODA6Ojg2NWM6Y2M1OTo0ODVlOjFiODUgIHBy
+2018-11-03 08:20:15	CLIENT -> SERVER: ZWZpeGxlbiA2NCAgc2NvcGVpZCAweDIwPGxpbms+PGJyIC8+CiAgICAgICAgZXRoZXIgYjg6Mjc6
+2018-11-03 08:20:15	CLIENT -> SERVER: ZWI6YjE6MTk6MDcgIHR4cXVldWVsZW4gMTAwMCAgKEV0aGVybmV0KTxiciAvPgogICAgICAgIFJY
+2018-11-03 08:20:15	CLIENT -> SERVER: IHBhY2tldHMgMTM3NDYgIGJ5dGVzIDg5NjUwMDQgKDguNSBNaUIpPGJyIC8+CiAgICAgICAgUlgg
+2018-11-03 08:20:15	CLIENT -> SERVER: ZXJyb3JzIDAgIGRyb3BwZWQgMCAgb3ZlcnJ1bnMgMCAgZnJhbWUgMDxiciAvPgogICAgICAgIFRY
+2018-11-03 08:20:15	CLIENT -> SERVER: IHBhY2tldHMgNzkyMiAgYnl0ZXMgMTczMzE1OCAoMS42IE1pQik8YnIgLz4KICAgICAgICBUWCBl
+2018-11-03 08:20:15	CLIENT -> SERVER: cnJvcnMgMCAgZHJvcHBlZCAwIG92ZXJydW5zIDAgIGNhcnJpZXIgMCAgY29sbGlzaW9ucyAwPGJy
+2018-11-03 08:20:15	CLIENT -> SERVER: IC8+CjxiciAvPgo=
+2018-11-03 08:20:15	CLIENT -> SERVER:
+2018-11-03 08:20:15	CLIENT -> SERVER: .
+2018-11-03 08:20:17	SERVER -> CLIENT: 250 2.0.0 OK 1541233216 k72-v6sm80366685pfj.63 - gsmtp
+2018-11-03 08:20:17	CLIENT -> SERVER: QUIT
+2018-11-03 08:20:17	SERVER -> CLIENT: 221 2.0.0 closing connection k72-v6sm80366685pfj.63 - gsmtp
