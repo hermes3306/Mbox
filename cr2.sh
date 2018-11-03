@@ -1,1 +1,1 @@
-echo `hostname` | mail -s "`hostname`-`hostname`(`date +%I:%M:%S`)"  nice9uy@hotmail.com
+echo `hostname` | mail -s "`hostname`-`hostname`(`date +%X%p`)"  nice9uy@hotmail.com
