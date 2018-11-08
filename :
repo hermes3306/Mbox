@@ -252,19 +252,16 @@ class mbox
   {
 	$conn = $this->dbconn();
 	$sql = "select $colsub, $colcont from $tname";
-	print($sql."\n");
-
     $result = mysqli_query($conn, $sql);
 	$inx =0;
 	while($row = mysqli_fetch_array($result)) {
     	$this->mail->Subject =       	$row[$colsub];
     	$this->mail->Body =        		$row[$colcont];
 		$this->mail->ClearAllRecipients();
-		$this->mail->AddAddress($emails[$inx]);
+		$this->addAddress($emails[$inx];
 		$inx++;
 		$this->mail->send();
 	}
-	mysqli_close($conn);
   }
 
   public function getAddressFromDB($tname, $colname) 
@@ -276,7 +273,6 @@ class mbox
 	while($row = mysqli_fetch_array($result)) {
 		array_push($add_list, $row[$colname]);
 	}
-	mysqli_close($conn);
 	return $add_list;
   }
 

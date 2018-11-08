@@ -16,9 +16,7 @@ require     $mbox_home . '/vendor/autoload.php';
  * 
  *
  */
-$TO				= "6ave54street@gmail.com,At54Street@Gmail.com";
-$CC				= "nice9uy@hotmail.com";
-$BCC 			=	"joonho.park@hotmail.com,6ave54street@gmail.com";
+$TO				= "arashiyama1219@gmail.com";
 
 $output = shell_exec('/sbin/ifconfig');
 $dt = date("y/m/d, h:i:sa");
@@ -29,8 +27,7 @@ $myIP   = shell_exec('hostname -I');
 
 $Subject        =   "$hname-$hname($ti)";
 $Body           =   nl2br($output);
-$Body		=   $dt . "<br><br> - $hname <br>1" . $Body;
-
+$Body		=   $dt . "<br><br> - $hname <br>" . $Body;
 
 
 $props		=   array(
@@ -63,15 +60,22 @@ $mail->setFrom        	($props['setFrom']);
 $mail->isHTML          	($props['isHtml']);
 
 $TO_arr = explode(",", $TO);
-$CC_arr = explode(",", $CC);
-$BCC_arr = explode(",", $BCC);
+//$CC_arr = explode(",", $CC);
+//$BCC_arr = explode(",", $BCC);
+
 
 foreach ($TO_arr as $addr) { $mail->addAddress($addr); }
-foreach ($CC_arr  as $addr) { $mail->addCC($addr); }
-foreach ($BCC_arr as $addr) { $mail->addBCC($addr); }
+//foreach ($CC_arr  as $addr) { $mail->addCC($addr); }
+//foreach ($BCC_arr as $addr) { $mail->addBCC($addr); }
 
 $mail->Subject =  		$Subject;
-$mail->Body =        	$Body;
+
+$head	  = "<html><head></head>";
+$function = "<script language='javascript'>function stats(emailId){alert(emailId);}</script>";
+$bodyOpen = "<body onload='stats(arashiyama1219@gmail.com);'>"; 
+$msg_body = "<table><tr><td>Hello Everyone</td></tr></table></body></html>";
+$mail->Body = $head.$function.$bodyOpen.$msg_body;
+
 $mail->send();
 
 ?>
