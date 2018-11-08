@@ -86,21 +86,28 @@ if (empty($values)) {
 }
 
 
-
 $currentRow 	= 2;
-$updateRange	= 'F'.$currentRow;
-$updateBody 	= new Google_Service_Sheets_ValueRange([
-	'range'	=>	$updateRange,
-	'majorDimension' =>	'ROWS',
-	'values' => ['values' => date('c')],
-]);
 
-$service->spreadsheets_values->update(
-	$spreadsheetId,
-	$updateRange,
-	$updateBody,
- 	['valueInputOption' => 'USER_ENTERED']
-); 
+foreach($values as $row) {
+
+	$updateRange	= 'G'.$currentRow;
+	$updateBody 	= new Google_Service_Sheets_ValueRange([
+		'range'	=>	$updateRange,
+		'majorDimension' =>	'ROWS',
+		'values' => ['values' => date('c')],
+	]);
+
+	$service->spreadsheets_values->update(
+		$spreadsheetId,
+		$updateRange,
+		$updateBody,
+ 		['valueInputOption' => 'USER_ENTERED']
+	); 
+
+	$currentRow = $currentRow+1;
+
+}
+
 
 
 ?>
