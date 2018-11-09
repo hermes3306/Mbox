@@ -90,7 +90,7 @@ $currentRow 	= 2;
 
 foreach($values as $row) {
 
-	$updateRange	= 'G'.$currentRow;
+	$updateRange	= 'H'.$currentRow;
 	$updateBody 	= new Google_Service_Sheets_ValueRange([
 		'range'	=>	$updateRange,
 		'majorDimension' =>	'ROWS',
