@@ -36,17 +36,15 @@ class mbox
     $this->mail->Password =       	$this->mail_props['Password'];
     $this->mail->setFrom          	($this->mail_props['setFrom']);
 
-	$this->Address 	= $this->mail_props['Address'];
-	$this->CC 			= $this->mail_props['CC'];
-	$this->BCC 		= $this->mail_props['BCC'];
-
     $this->mail->isHTML           	($this->mail_props['isHtml']);
     $this->mail->Subject =       	$this->mail_props['Subject'];
     $this->mail->Body =        		$this->mail_props['Body'];
 
+	/*
     foreach ($this->mail_props['Attachment'] as $attach) {
         $this->mail->addAttachment($attach);
     }
+	*/
 
   }
 
@@ -206,15 +204,6 @@ class mbox
    */
   public function send()
   {
-    foreach ($this->Address as $addr) {
-        $this->mail->addAddress   ($addr);
-	}
-    foreach ($this->CC as $addr) {
-        $this->mail->addCC   ($addr);
-	}
-    foreach ($this->BCC as $addr) {
-        $this->mail->addBCC   ($addr);
-	}
     return $this->mail->send();
   }
 
@@ -312,6 +301,138 @@ class mbox
   {
 	foreach($add_list as $addr) { array_push($this->BCC, $addr); }
   }
+
+  public function gencoupons() {
+	$conn = $this->dbconn();
+	$sql="CREATE TABLE IF Not Exists Coupons( 
+                               coupon  int(11) unsigned NOT NULL, 
+                               userid  varchar(30) default null, 
+                               email   varchar(45) default null, 
+                               created_at timestamp DEFAULT CURRENT_TIMESTAMP, 
+                               issued_at  datetime default null, 
+                               sent_at    datetime default null, 
+                               used_at    datetime default null,
+							   primary key(coupon)
+					)";
+	print("$sql\n");
+	if(mysqli_query($conn, $sql)) {
+		print("Coupons created!\n");
+	} else {
+		print("Error Coupons table:".mysqli_error($conn));
+	}
+
+    $arr = array();
+	$num = 10000;
+    while ($num > count($arr)) {
+        $i = rand(1000000, 9999999);
+        $arr[$i] = $i;
+    }
+
+
+    $sql = "insert into Coupons (coupon) values(?)";
+    $stmt = $conn->prepare($sql);
+
+    foreach($arr as $c) {
+        $stmt->bind_param("i", $c);
+        $stmt->execute();
+    }
+    mysqli_close($conn);
+  }
+
+
+  public function getcoupon($userid, $email) {
+	$conn = $this->dbconn();
+	$sql = "select coupon from Coupons 
+				where userid like '$userid' and
+				email like '$email' limit 1";
+	print("$sql\n");
+
+	$coupon = 0;
+	if($result = mysqli_query($conn, $sql)) {
+		$row = mysqli_fetch_row($result);
+		$coupon = $row[0];	
+		print("coupon:$coupon \n");
+	} else {
+		print("No coupon related to ($userid, $email) \n");
+	}
+
+	if($coupon==0) {
+		$sql = "Select coupon from Coupons 
+					where userid is null and email is null limit 1";
+		if($result = mysqli_query($conn, $sql)) {
+			$row = mysqli_fetch_row($result);
+			$coupon = $row[0];	
+		}
+
+		print("coupon:$coupon \n");
+		if($coupon <> 0) {
+			$sql = "update Coupons set userid = '$userid' ,
+					email = '$email' where coupon = $coupon"; 
+			print("$sql\n");
+			if(mysqli_query($conn, $sql)) {
+				print("coupon[$coupon] is generated for user[$userid, $email] \n");
+			} else {
+				print("something wrong !!! \n");
+			}
+		}
+
+	}
+    mysqli_close($conn);
+	return $coupon;
+  }
+
+  public function getvisitors() {
+	$sql = "SELECT id, 
+				name as sns, 
+				email, 
+				time as collect_dt, 
+				if(update_time=null, 1,2) as visit_cnt,
+				ifnull(update_time, ifnull(time,'-')) as visit_dt,
+				if(update_time=null, '1st visit', 'Re-visit') as mail_ty,
+				ifnull(null,'-') as coupon_num,
+				ifnull(null,'-') as coupon_mail_dt,  
+				ifnull(null,'-') as coupon_issue_dt,
+				ifnull(null,'-') as coupon_sent_dt, 
+				ifnull(null,'-') as coupon_used_dt 
+			FROM User";
+	print("$sql\n");
+
+	$conn = $this->dbconn();
+    $result = mysqli_query($conn, $sql);
+	$visitors = array();
+	while($row = mysqli_fetch_array($result)) {
+		$visitor = new visitor(
+			$row['id'],
+			$row['sns'],
+			$row['email'],
+			$row['collect_dt'],
+			$row['visit_cnt'],
+			$row['visit_dt'],
+			$row['mail_ty'],
+			$row['coupon_num'],
+			$row['coupon_mail_dt'],
+			$row['coupon_issue_dt'],
+			$row['coupon_sent_dt'],
+			$row['coupon_used_dt']
+		);
+		array_push($visitors, $visitor);
+	}
+	mysqli_close($conn);
+	return $visitors;
+  }
+
+  public function setCoupon4visitors() {
+	$visitors = $this->getvisitors();
+	foreach ($visitors as $visitor) {
+		$visitor->coupon_num = $this->getcoupon($visitor->sns, $visitor->email);
+		print("$visitor->coupon_num \n");
+    }
+	return $visitors;
+  }
+
+
+
+
 
 
 }
