@@ -421,7 +421,15 @@ class mbox
 	return $visitors;
   }
 
-  public function setCoupon4visitors() {
+  public function assignCoupons($visitors) {
+	foreach ($visitors as $visitor) {
+		$visitor->coupon_num = $this->getcoupon($visitor->sns, $visitor->email);
+		print("$visitor->coupon_num \n");
+    }
+  	return $visitors;
+  }
+
+  public function getvisitorsWithCoupons() {
 	$visitors = $this->getvisitors();
 	foreach ($visitors as $visitor) {
 		$visitor->coupon_num = $this->getcoupon($visitor->sns, $visitor->email);

@@ -8,7 +8,7 @@
 	$mbox = new mbox($mbox_home . '/wfmail.ini');
 
 	$visitors = $mbox->getvisitors();
-	$visitors = $mbox->setCoupon4visitors();
+	$visitors = $mbox->getvisitorsWithCoupons();
 	//var_dump($visitors);
 
 	$ggsheet = new ggsheet();

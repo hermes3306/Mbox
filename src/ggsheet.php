@@ -238,6 +238,29 @@ class ggsheet
 		}
 	}
   }
+
+  public function visitors2GGvalues($visitors) {
+	$values = array();
+        foreach($visitors as $visitor) {
+                $arr =  [
+                        $visitor->id,
+                $visitor->sns,
+                $visitor->email,
+                $visitor->collect_dt,
+                    $visitor->visit_cnt,
+                $visitor->visit_dt,
+                $visitor->mail_ty,
+                $visitor->coupon_num,
+                $visitor->coupon_mail_dt,
+                $visitor->coupon_issue_dt,
+                $visitor->coupon_sent_dt,
+                $visitor->coupon_used_dt
+                ];
+                array_push($values,$arr);
+        }
+	return $values;
+  }
+	
   
 
 
