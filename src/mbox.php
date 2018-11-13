@@ -38,7 +38,7 @@ class mbox
 
     $this->mail->isHTML           	($this->mail_props['isHtml']);
     $this->mail->Subject =       	$this->mail_props['Subject'];
-    $this->mail->Body =        		$this->mail_props['Body'];
+    $this->mail->Body =      		$this->mail_props['Body'];
 
 	/*
     foreach ($this->mail_props['Attachment'] as $attach) {
