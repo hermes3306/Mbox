@@ -84,7 +84,7 @@ $optParams = array(
 $results = $service->events->listEvents($calendarId, $optParams);
 $events = $results->getItems();
 
-$nextweek = strtotime("+1 week"); 
+$nextweek = strtotime("+4 week"); 
 
 $schedule = array();
 if (empty($events)) {
@@ -138,7 +138,7 @@ $email_template = [
 
 $t_name = "S.html";
 
-$mbox = new mbox('/home/pi/calmail.ini');
+$mbox = new mbox('/Users/pi/calmail.ini');
 $mbox->mail->ClearAllRecipients();
 $mbox->mail->addAddress('jason.park@altibase.com');
 $email_template[$t_name]["{{name}}"] = "Joonho Park";
