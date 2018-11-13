@@ -6,5 +6,5 @@
 # where [:port] is an optional port number that defaults to 25.
 
 root:pi@w1:smtp.gmail.com:587
-www-data:w1@z1:smtp.gmail.com:587
+www-data:w1@xx:smtp.gmail.com:587
 
