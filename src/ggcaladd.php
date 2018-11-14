@@ -23,8 +23,7 @@ function getClient()
 {
     $client = new Google_Client();
     $client->setApplicationName('Google Calendar API PHP Quickstart');
-    //$client->setScopes(Google_Service_Calendar::CALENDAR_READONLY);
-    $client->setScopes(Google_Service_Calendar::CALENDAR);
+    $client->setScopes(Google_Service_Calendar::CALENDAR_READONLY);
     $client->setAuthConfig('credentials-cal.json');
     $client->setAccessType('offline');
     $client->setPrompt('select_account consent');
@@ -85,7 +84,7 @@ $optParams = array(
 $results = $service->events->listEvents($calendarId, $optParams);
 $events = $results->getItems();
 
-$nextweek = strtotime("+1 week"); 
+$nextweek = strtotime("+4 week"); 
 
 $schedule = array();
 if (empty($events)) {
@@ -126,23 +125,22 @@ if (empty($events)) {
 // credentials.
 
 $event = new Google_Service_Calendar_Event(array(
-  'summary' => 'Google I/O 2015',
-  'location' => '800 Howard St., San Francisco, CA 94103',
-  'description' => 'A chance to hear more about Google\'s developer products.',
+  'summary' => 'Smart City Business Day 11/29/2018, 14:00~18:00',
+  'location' => '창조경제융합센터',
+  'description' => 'Smart IoT City Business Reference case studies.',
   'start' => array(
-    'dateTime' => '2018-11-28T09:00:00-07:00',
-    'timeZone' => 'America/Los_Angeles',
+    'dateTime' => '2018-11-29T14:00:00-18:00',
+    'timeZone' => 'Asia/Seoul',
   ),
   'end' => array(
-    'dateTime' => '2018-11-29T17:00:00-07:00',
-    'timeZone' => 'America/Los_Angeles',
+    'dateTime' => '2018-11-29T14:00:00-18:00',
+    'timeZone' => 'Asia/Seoul',
   ),
   'recurrence' => array(
-    'RRULE:FREQ=DAILY;COUNT=2'
+    'RRULE:FREQ=DAILY;COUNT=1'
   ),
   'attendees' => array(
     array('email' => 'jason.park@altibase.com'),
-    array('email' => 'nice9uy@hotmail.com'),
   ),
   'reminders' => array(
     'useDefault' => FALSE,
@@ -152,6 +150,7 @@ $event = new Google_Service_Calendar_Event(array(
     ),
   ),
 ));
+
 
 $calendarId = 'primary';
 $event = $service->events->insert($calendarId, $event);
