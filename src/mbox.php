@@ -92,6 +92,9 @@ class mbox
   }
 
   public function setTemplate($fname, $inlines) {
+
+	
+
 	$conts = file_get_contents($fname, __DIR__);
 	foreach($inlines as $key => $inline) {
 		$conts = str_replace($key,$inline,$conts);

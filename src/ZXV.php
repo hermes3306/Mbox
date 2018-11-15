@@ -9,11 +9,20 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+/*
 	$mbox_home  =   getenv('mbox_home',true) ? getenv('mbox_home', true) : '.';
 	require     $mbox_home . '/vendor/autoload.php';
 	require     $mbox_home . '/src/mbox.php';
 	require     $mbox_home . '/src/visitor.php';
 	require     $mbox_home . '/src/ggsheet.php';
+*/
+
+	$mbox_home	=	__DIR__;
+	require     $mbox_home . '/vendor/autoload.php';
+	require     $mbox_home . '/mbox.php';
+	require     $mbox_home . '/visitor.php';
+	require     $mbox_home . '/ggsheet.php';
+
 
 	$BCC = "6Ave54Street@gmail.com";
 	$subjects =	[
@@ -22,13 +31,13 @@ use PHPMailer\PHPMailer\Exception;
 		"L.html" => "10% discount / Special event invitation",
 		"B.html" => "Happy Birthday",
 		"O.html" => "One free beer and Introducing new beer",
-	]
+	];
 	
 	$email_template = [
 		"1.html" => [
 			"{{name}}"	=>	"Customer Name",
 			"{{con1}}"	=>	"Thanks for stopping. Can you please rate us with the below URL:", 
-			"{{url}}"	=>	"http://xxx.xxx.xxx/rate/customerid",
+			"{{url}}"	=>	"http://www.zxvcom.com/rating/d",
 			"{{con3}}"	=>	"Have a great day!",
 			"{{con4}}"	=>	"Thanks again.", 
 			"{{con5}}"	=>	"--<br> ZXV.", 
@@ -60,7 +69,7 @@ use PHPMailer\PHPMailer\Exception;
 						],
 		"O.html"	=> [
 			"{{name}}"	=>	"Customer Name",
-			"{{con1}}"	=>	"We have not seen you for a while, We are missing you. We offer One free beer coupon as below and introduct a new new beer as below:   
+			"{{con1}}"	=>	"We have not seen you for a while, We are missing you. We offer One free beer coupon as below and introduct a new new beer as below:",
 			"{{coupon}}"	=>	"10% Coupont ######",
 			"{{url}}"	=>	"http://xxx.xxx.xxx/event/intro_new_beer/customerid",
 			"{{con4}}"	=>	"Have a great day!",
@@ -79,9 +88,8 @@ use PHPMailer\PHPMailer\Exception;
 
     printf("\n\n-------------- 1회방문(RR) -------------------- \n");
     $visitors = $categorizedVisitors['1회방문'];
-    foreach($visitors as $v) { $v->print2(); }
-
 	foreach($visitors as $v) {
+		$v->print2();
 		$t_name = "1.html";
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
@@ -96,14 +104,15 @@ use PHPMailer\PHPMailer\Exception;
 
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_mail_dt', $today);
+
+		break; // 1 row only
 	}
 
 
     printf("\n\n-------------- 2회방문(C) -------------------- \n");
     $visitors = $categorizedVisitors['2회방문'];
-    foreach($visitors as $v) { $v->print2(); }
-
 	foreach($visitors as $v) {
+		$v->print2();
 		$t_name = "R.html";
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
@@ -118,13 +127,14 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->send();
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_mail_dt', $today);
+
+		break; // 1 row only
 	}
 
     printf("\n\n-------------- 3회방문(C) -------------------- \n");
     $visitors = $categorizedVisitors['3회방문'];
-    foreach($visitors as $v) { $v->print2(); }
-
 	foreach($visitors as $v) {
+		$v->print2();
 		$t_name = "R.html";
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
@@ -139,13 +149,14 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->send();
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_issue_dt,', $today);
+
+		break; // 1 row only
 	}
 
     printf("\n\n-------------- 4회방문(C) -------------------- \n");
     $visitors = $categorizedVisitors['4회방문'];
-    foreach($visitors as $v) { $v->print2(); }
-
 	foreach($visitors as $v) {
+		$v->print2();
 		$t_name = "R.html";
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
@@ -160,13 +171,14 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->send();
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_issue_dt', $today);
+
+		break; // 1 row only
 	}
 
     printf("\n\n-------------- 5회이상 (Loyal, C, U) -------------------- \n");
     $visitors = $categorizedVisitors['5회이상'];
-    foreach($visitors as $v) { $v->print2(); }
-
 	foreach($visitors as $v) {
+		$v->print2();
 		$t_name = "L.html";
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
@@ -181,14 +193,15 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->send();
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_issue_dt', $today);
+
+		break; // 1 row only
 	}
 
     printf("\n\n-------------- LOST C(C,U) -------------------- \n");
     $visitors = $categorizedVisitors['쿠폰'];
-    foreach($visitors as $v) { $v->print2(); }
-
 	foreach($visitors as $v) {
-		$t_name = "c.html";
+		$v->print2();
+		$t_name = "O.html";
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
 		$mbox->mail->addBCC($BCC);
@@ -202,8 +215,9 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->send();
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_sent_dt', $today);
+
+		break; // 1 row only
 	}
-	$mbox->send();
 
 	$ggsheet->uploadVisitorsAt($MYVISITORS,2);
 
