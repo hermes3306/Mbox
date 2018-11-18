@@ -25,6 +25,10 @@ use PHPMailer\PHPMailer\Exception;
 
 
 	$BCC = "6Ave54Street@gmail.com";
+	//$BCC = "kwangmin.lee@waffle.at";
+	$CC  = "joonho.park@hotmail.com";
+ 
+
 	$subjects =	[
 		"1.html" => "Rating Request",
 		"R.html" => "One free beer",
@@ -37,10 +41,10 @@ use PHPMailer\PHPMailer\Exception;
 		"1.html" => [
 			"{{name}}"	=>	"Customer Name",
 			"{{con1}}"	=>	"Thanks for stopping. Can you please rate us with the below URL:", 
-			"{{url}}"	=>	"http://www.zxvcom.com/rating/d",
+			"{{event}}"	=>	"http://www.zxvcom.com/rating/d",
 			"{{con3}}"	=>	"Have a great day!",
 			"{{con4}}"	=>	"Thanks again.", 
-			"{{con5}}"	=>	"--<br> ZXV.", 
+			"{{con5}}"	=>	"<br><br><br><br>Best regards, <br>ZXV", 
 						],
 		"R.html" => [
 			"{{name}}"	=>	"Customer Name",
@@ -48,16 +52,16 @@ use PHPMailer\PHPMailer\Exception;
 			"{{coupon}}"	=>	"Coupon #####",
 			"{{con3}}"	=>	"Have a great day!",
 			"{{con4}}"	=>	"Thanks again.", 
-			"{{con5}}"	=>	"--<br> ZXV.", 
+			"{{con5}}"	=>	"<br><br><br><br>Best regards, <br>ZXV", 
 						],
 		"L.html"	=> [
 			"{{name}}"	=>	"Customer Name",
 			"{{con1}}"	=>	"It looks like you love GIBH!. We offer a 10% coupon and event invitation in the sense of gratitude.", 
 			"{{coupon}}"	=>	"10% Coupont ######",
-			"{{url}}"	=>	"http://xxx.xxx.xxx/event/invitation/customerid",
+			"{{event}}"	=>	"http://xxx.xxx.xxx/event/invitation/customerid",
 			"{{con4}}"	=>	"Have a great day!",
 			"{{con5}}"	=>	"Thanks again.", 
-			"{{con6}}"	=>	"--<br> ZXV.", 
+			"{{con6}}"	=>	"<br><br><br><br>Best regards, <br>ZXV", 
 						],
 		"B.html"	=> [
 			"{{name}}"	=>	"Customer Name",
@@ -65,22 +69,24 @@ use PHPMailer\PHPMailer\Exception;
 			"{{coupon}}"	=>	"15% Coupon #####",
 			"{{con3}}"	=>	"Have a great day!",
 			"{{con4}}"	=>	"Thanks again.", 
-			"{{con5}}"	=>	"--<br> ZXV.", 
+			"{{con5}}"	=>	"<br><br><br><br>Best regards, <br>ZXV", 
 						],
 		"O.html"	=> [
 			"{{name}}"	=>	"Customer Name",
 			"{{con1}}"	=>	"We have not seen you for a while, We are missing you. We offer One free beer coupon as below and introduct a new new beer as below:",
 			"{{coupon}}"	=>	"10% Coupont ######",
-			"{{url}}"	=>	"http://xxx.xxx.xxx/event/intro_new_beer/customerid",
+			"{{event}}"	=>	"http://xxx.xxx.xxx/event/intro_new_beer/customerid",
 			"{{con4}}"	=>	"Have a great day!",
 			"{{con5}}"	=>	"Thanks again.", 
-			"{{con6}}"	=>	"--<br> ZXV.", 
+			"{{con6}}"	=>	"<br><br><br><br>Best regards, <br>ZXV", 
 						],
 	];
 
 
 	$mbox = new mbox(__DIR__ . '/ZXV.ini');
 	$ggsheet = new ggsheet();
+	$ggsheet->spreadsheetId = '1oyKX1Vkls8vri7GbCagxYNB_zN6SPnpPN6xlrtwbxeA';
+
 
 	$MYVISITORS = $ggsheet->info();
 
@@ -94,8 +100,9 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
 		$mbox->mail->addBCC($BCC);
+		$mbox->mail->addCC($CC);
 
-		$mbox->mail->Subject =	$subjects[$t_name];
+		$mbox->mail->Subject =	$subjects[$t_name] . ' for '. $v->sns ;
 		$email_template[$t_name]["{{name}}"] = $v->sns;
 		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
 
@@ -117,60 +124,17 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
 		$mbox->mail->addBCC($BCC);
+		$mbox->mail->addCC($CC);
 
-		$mbox->mail->Subject =	$subjects[$t_name];
+		$mbox->mail->Subject =	$subjects[$t_name] . ' for '. $v->sns ;
 		$email_template[$t_name]["{{name}}"] = $v->sns;
 		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
-		//$email_template[$t_name]["{{url}}"] = "http://xx.xx.xx/Revisitor/$v->id";
+		//$email_template[$t_name]["{{event}}"] = "http://xx.xx.xx/Revisitor/$v->id";
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
 		$mbox->send();
 		$today=date("Y-m-d H:i:s");
 		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_mail_dt', $today);
-
-		break; // 1 row only
-	}
-
-    printf("\n\n-------------- 3회방문(C) -------------------- \n");
-    $visitors = $categorizedVisitors['3회방문'];
-	foreach($visitors as $v) {
-		$v->print2();
-		$t_name = "R.html";
-		$mbox->mail->ClearAllRecipients();
-		$mbox->mail->addAddress($v->email);
-		$mbox->mail->addBCC($BCC);
-
-		$mbox->mail->Subject =	$subjects[$t_name];
-		$email_template[$t_name]["{{name}}"] = $v->sns;
-		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
-		//$email_template[$t_name]["{{url}}"] = "http://xx.xx.xx/Revisitor/$v->id";
-
-		$mbox->setTemplate($t_name, $email_template[$t_name]);
-		$mbox->send();
-		$today=date("Y-m-d H:i:s");
-		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_issue_dt,', $today);
-
-		break; // 1 row only
-	}
-
-    printf("\n\n-------------- 4회방문(C) -------------------- \n");
-    $visitors = $categorizedVisitors['4회방문'];
-	foreach($visitors as $v) {
-		$v->print2();
-		$t_name = "R.html";
-		$mbox->mail->ClearAllRecipients();
-		$mbox->mail->addAddress($v->email);
-		$mbox->mail->addBCC($BCC);
-
-		$mbox->mail->Subject =	$subjects[$t_name];
-		$email_template[$t_name]["{{name}}"] = $v->sns;
-		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
-		//$email_template[$t_name]["{{url}}"] = "http://xx.xx.xx/Revisitor/$v->id";
-
-		$mbox->setTemplate($t_name, $email_template[$t_name]);
-		$mbox->send();
-		$today=date("Y-m-d H:i:s");
-		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_issue_dt', $today);
 
 		break; // 1 row only
 	}
@@ -183,11 +147,12 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
 		$mbox->mail->addBCC($BCC);
+		$mbox->mail->addCC($CC);
 
-		$mbox->mail->Subject =	$subjects[$t_name];
+		$mbox->mail->Subject =	$subjects[$t_name] . ' for '. $v->sns ;
 		$email_template[$t_name]["{{name}}"] = $v->sns;
 		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
-		$email_template[$t_name]["{{url}}"] = "http://xx.xx.xx/Invitaion/$v->id";
+		$email_template[$t_name]["{{event}}"] = "http://xx.xx.xx/Loyarlevent/$v->id";
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
 		$mbox->send();
@@ -205,11 +170,12 @@ use PHPMailer\PHPMailer\Exception;
 		$mbox->mail->ClearAllRecipients();
 		$mbox->mail->addAddress($v->email);
 		$mbox->mail->addBCC($BCC);
+		$mbox->mail->addCC($CC);
 
-		$mbox->mail->Subject =	$subjects[$t_name];
+		$mbox->mail->Subject =	$subjects[$t_name] . ' for '. $v->sns ;
 		$email_template[$t_name]["{{name}}"] = $v->sns;
 		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
-		$email_template[$t_name]["{{url}}"] = "http://xx.xx.xx/Invitaion/$v->id";
+		$email_template[$t_name]["{{event}}"] = "http://xx.xx.xx/Invitaion/$v->id";
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
 		$mbox->send();

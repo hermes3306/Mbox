@@ -141,11 +141,11 @@ class ggsheet
 	} else {
     	foreach ($values as $row) {
         	// Print columns A and E, which correspond to indices 0 and 4.
+			/*
         	printf("%s, %s, %s, %s, %s, %s, %s, %s\n",
            	 	$row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8],
 				$row[9], $row[10], $row[11] );
-    	
-
+			*/
     		$visitor = new visitor( $row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7],
             			$row[8], $row[9], $row[10], $row[11] );
 		array_push($visitors, $visitor);
@@ -234,7 +234,6 @@ class ggsheet
 				case "coupon_issue_dt" : $v->coupon_issue_dt = $val; break;
 				case "coupon_sent_dt"  :  $v->coupon_sent_dt = $val; break;
 			}
-			$v->print2();
 			break;
 		}
 	}
