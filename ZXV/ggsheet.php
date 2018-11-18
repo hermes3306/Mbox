@@ -25,7 +25,7 @@ class ggsheet
 	$this->sheetName	   = 'Today';
 	$this->colFrom 		   = 'A';
 	$this->rowFrom 		   = '2';
-	$this->colTo 		   = 'L';
+	$this->colTo 		   = 'M';
 	$this->range		   =
 			 "$this->sheetName!$this->colFrom$this->rowFrom:$this->colTo";
 	$this->service = new Google_Service_Sheets($this->client);
@@ -106,9 +106,10 @@ class ggsheet
      		$visitor->visit_dt,
     	 	$visitor->mail_ty,
       		$visitor->coupon_num,
-      		$visitor->coupon_mail_dt,
-      		$visitor->coupon_issue_dt,
-      		$visitor->coupon_sent_dt,
+      		$visitor->fv_mail_dt,
+      		$visitor->rv_mail_dt,
+      		$visitor->lv_mail_dt,
+      		$visitor->hv_mail_dt,
       		$visitor->coupon_used_dt
 		];
 		array_push($values,$arr);
@@ -122,9 +123,7 @@ class ggsheet
 
   public function uploadVisitors($visitors) {
 	$service = $this->service;
-	$spreadsheetId = $this->spreadsheetId;
-
-	$currentRow = $this->getRowNum() + 1;
+	$spreadsheetId = $this->spreadsheetId; $currentRow = $this->getRowNum() + 1;
 	$this->uploadVisitorsAt($visitors, $currentRow);
   }
 
@@ -140,14 +139,21 @@ class ggsheet
     	print "No data found.\n";
 	} else {
     	foreach ($values as $row) {
-        	// Print columns A and E, which correspond to indices 0 and 4.
-			/*
-        	printf("%s, %s, %s, %s, %s, %s, %s, %s\n",
-           	 	$row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8],
-				$row[9], $row[10], $row[11] );
-			*/
-    		$visitor = new visitor( $row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7],
-            			$row[8], $row[9], $row[10], $row[11] );
+    		$visitor = new visitor( 
+						(is_null($row[0]) ? "-" : $row[0]),
+						(is_null($row[1]) ? "-" : $row[1]),
+						(is_null($row[2]) ? "-" : $row[2]),
+						(is_null($row[3]) ? "-" : $row[3]),
+						(is_null($row[4]) ? "-" : $row[4]),
+						(is_null($row[5]) ? "-" : $row[5]),
+						(is_null($row[6]) ? "-" : $row[6]),
+						(is_null($row[7]) ? "-" : $row[7]),
+						(is_null($row[8]) ? "-" : $row[8]),
+						(is_null($row[9]) ? "-" : $row[9]),
+						(is_null($row[10]) ? "-" : $row[10]),
+						(is_null($row[11]) ? "-" : $row[11]),
+						(is_null($row[12]) ? "-" : $row[12]));
+
 		array_push($visitors, $visitor);
 		}
 	}
@@ -169,18 +175,19 @@ class ggsheet
 
     foreach($visitors as $visitor) {
         $newvisitor = new visitor(
-            $visitor->id,
-            $visitor->sns,
-            $visitor->email,
-            $visitor->collect_dt,
-            $visitor->visit_cnt,
-            $visitor->visit_dt,
-            $visitor->mail_ty,
-            $visitor->coupon_num,
-            $visitor->coupon_mail_dt,
-            $visitor->coupon_issue_dt,
-            $visitor->coupon_sent_dt,
-            $visitor->coupon_used_dt
+			$visitor->id,
+      		$visitor->sns,
+      		$visitor->email,
+      		$visitor->collect_dt,
+ 		    $visitor->visit_cnt,
+     		$visitor->visit_dt,
+    	 	$visitor->mail_ty,
+      		$visitor->coupon_num,
+      		$visitor->fv_mail_dt,
+      		$visitor->rv_mail_dt,
+      		$visitor->lv_mail_dt,
+      		$visitor->hv_mail_dt,
+      		$visitor->coupon_used_dt
         );
 
         switch($visitor->mail_ty) {
@@ -233,11 +240,12 @@ class ggsheet
 	foreach($visitors as $v) {
 		if($v->email == $email) {
 			switch($key) {
-				case "coupon_mail_dt" : $v->coupon_mail_dt = $val; break;
-				case "coupon_issue_dt" : $v->coupon_issue_dt = $val; break;
-				case "coupon_sent_dt"  :  $v->coupon_sent_dt = $val; break;
+				case "fv_mail_dt"  		: $v->fv_mail_dt = $val; break;
+				case "rv_mail_dt"  		: $v->rv_mail_dt = $val; break;
+				case "lv_mail_dt"  		: $v->lv_mail_dt = $val; break;
+				case "hv_mail_dt"  		: $v->hv_mail_dt = $val; break;
+				case "coupon_used_dt"  	: $v->yypcoupon_sent_dt = $val; break;
 			}
-			break;
 		}
 	}
   }

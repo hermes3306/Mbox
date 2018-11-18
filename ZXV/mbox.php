@@ -210,6 +210,9 @@ class mbox
     return $this->mail->send();
   }
 
+  public function send2() {
+  }
+
   public function send_ind() 
   {
 	foreach ($this->Address as $addr) {

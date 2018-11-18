@@ -99,10 +99,10 @@ use PHPMailer\PHPMailer\Exception;
 		$email_template[$t_name]["{{coupon}}"] = $v->coupon_num;
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
-		$mbox->send();
+		$mbox->send2();
 
 		$today=date("Y-m-d H:i:s");
-		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_mail_dt', $today);
+		$ggsheet->replace($MYVISITORS, $v->email, 'fv_mail_dt', $today);
 	}
 
 
@@ -127,9 +127,9 @@ use PHPMailer\PHPMailer\Exception;
 		//$email_template[$t_name]["{{event}}"] = "http://xx.xx.xx/Revisitor/$v->id";
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
-		$mbox->send();
+		$mbox->send2();
 		$today=date("Y-m-d H:i:s");
-		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_mail_dt', $today);
+		$ggsheet->replace($MYVISITORS, $v->email, 'rv_mail_dt', $today);
 	}
 
     printf("\n\n-------------- 5회이상 (Loyal, C, U) -------------------- \n");
@@ -151,9 +151,9 @@ use PHPMailer\PHPMailer\Exception;
 		$email_template[$t_name]["{{event}}"] = "http://xx.xx.xx/Loyarlevent/$v->id";
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
-		$mbox->send();
+		$mbox->send2();
 		$today=date("Y-m-d H:i:s");
-		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_issue_dt', $today);
+		$ggsheet->replace($MYVISITORS, $v->email, 'lv_mail_dt', $today);
 	}
 
     printf("\n\n-------------- LOST C(C,U) -------------------- \n");
@@ -172,9 +172,9 @@ use PHPMailer\PHPMailer\Exception;
 		$email_template[$t_name]["{{event}}"] = "http://xx.xx.xx/Invitaion/$v->id";
 
 		$mbox->setTemplate($t_name, $email_template[$t_name]);
-		$mbox->send();
+		$mbox->send2();
 		$today=date("Y-m-d H:i:s");
-		$ggsheet->replace($MYVISITORS, $v->email, 'coupon_sent_dt', $today);
+		$ggsheet->replace($MYVISITORS, $v->email, 'hv_mail_dt', $today);
 	}
 
 	$ggsheet->uploadVisitorsAt($MYVISITORS,2);
