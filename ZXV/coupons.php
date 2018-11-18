@@ -13,9 +13,10 @@ require __DIR__ . '/ggsheet.php';
 class coupons
 {
   public $types = [
-	"One Beer" 	=> "1",
-	"10% DC"	=> "2",
+	"5% DC" 	=> "1",
+	"One Beer" 	=> "2",
 	"15% DC"	=> "3",
+	"10% DC"	=> "4",
   ];
 
   public $pdo_cons = "sqlite:". __DIR__ . "/coupons.sqlite3";
@@ -47,9 +48,10 @@ class coupons
                 ifnull(update_time, ifnull(time,'-')) as visit_dt,
                 if(update_time=null, '1st visit', 'Re-visit') as mail_ty,
                 ifnull(null,'-') as coupon_num,
-                ifnull(null,'-') as coupon_mail_dt,
-                ifnull(null,'-') as coupon_issue_dt,
-                ifnull(null,'-') as coupon_sent_dt,
+                ifnull(null,'-') as fv_mail_dt,
+                ifnull(null,'-') as rv_mail_dt,
+                ifnull(null,'-') as lv_mail_dt,
+                ifnull(null,'-') as hv_mail_dt,
                 ifnull(null,'-') as coupon_used_dt
             FROM User";
     print("$sql\n");
@@ -79,9 +81,10 @@ class coupons
             //$row['mail_ty'],
 			$vtype,
             $row['coupon_num'],
-            $row['coupon_mail_dt'],
-            $row['coupon_issue_dt'],
-            $row['coupon_sent_dt'],
+            $row['fv_mail_dt'],
+            $row['rv_mail_dt'],
+            $row['lv_mail_dt'],
+            $row['hv_mail_dt'],
             $row['coupon_used_dt']
         );
         array_push($visitors, $visitor);
@@ -100,7 +103,7 @@ class coupons
     return $randomString;
   }
 
-  public function gencoupons($num) {
+  public function gencoupons($num, $type) {
 	$arr = array();
 	while($num > count($arr)) {
 		$i = $this->randomString();
@@ -216,7 +219,7 @@ class coupons
 
 $myc = new coupons();
 foreach($myc->types as $k => $v) {
-	$cs =  $myc->gencoupons(100);
+	$cs =  $myc->gencoupons(100, $k);
 	foreach($cs as $k => &$c) {
 		printf("%s => %s \n", $k,$c);
 	}
@@ -226,7 +229,18 @@ foreach($myc->types as $k => $v) {
 $myc->show();
 $visitors = $myc->getvisitors();
 foreach($visitors as &$v) {
-	$v->coupon_num = $myc->getcoupon($v->sns, $v->email, rand(1,3));
+	$ctype = "-";
+	switch($v->mail_ty) {
+     		case "1회방문": $ctype = $myc->types["5% DC"]; break;
+            case "2회방문": 
+            case "3회방문":
+            case "4회방문": $ctype = $myc->types["One Beer"]; break;
+            case "5회이상": 
+            case "우수고객": $ctype = $myc->types["15% DC"]; break;
+            case "휴먼고객": $ctype = $myc->types["10% DC"]; break;
+	}
+
+	$v->coupon_num = $myc->getcoupon($v->sns, $v->email, $ctype);
 	$v->email = "wf.".$v->email;
 	$v->print2();
 }
