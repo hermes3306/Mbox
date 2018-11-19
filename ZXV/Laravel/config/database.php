@@ -35,7 +35,7 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('ZXV.sqlite')),
+            'database' => env('DB_DATABASE', database_path('ZXV.sqlite3')),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],

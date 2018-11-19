@@ -29,7 +29,7 @@ class ggsheet
 	$this->sheetName	   = 'Today';
 	$this->colFrom 		   = 'A';
 	$this->rowFrom 		   = '2';
-	$this->colTo 		   = 'M';
+	$this->colTo 		   = 'L';
 	$this->range		   =
 			 "$this->sheetName!$this->colFrom$this->rowFrom:$this->colTo";
 	$this->service = new Google_Service_Sheets($this->client);
