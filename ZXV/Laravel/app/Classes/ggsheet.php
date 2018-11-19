@@ -29,7 +29,7 @@ class ggsheet
 	$this->sheetName	   = 'Today';
 	$this->colFrom 		   = 'A';
 	$this->rowFrom 		   = '2';
-	$this->colTo 		   = 'L';
+	$this->colTo 		   = 'M';
 	$this->range		   =
 			 "$this->sheetName!$this->colFrom$this->rowFrom:$this->colTo";
 	$this->service = new Google_Service_Sheets($this->client);
@@ -46,7 +46,7 @@ class ggsheet
 		Google_Service_Sheets::DRIVE_FILE)
     );
 
-    $client->setAuthConfig(__DIR__ . '/credentials.json');
+    $client->setAuthConfig( __DIR__ . '/credentials.json');
     $client->setAccessType('offline');
     $client->setPrompt('select_account consent');
 
@@ -156,12 +156,14 @@ class ggsheet
 						(is_null($row[9]) ? "-" : $row[9]),
 						(is_null($row[10]) ? "-" : $row[10]),
 						(is_null($row[11]) ? "-" : $row[11]),
-						 "-","-");
+						//(is_null($row[12]) ? "-" : $row[12]));
+						"-");
 
 		array_push($visitors, $visitor);
 		}
 	}
 	$currentRow = count($values);
+	//print("Total Row: $currentRow \n");
 	return $visitors;
   }
 
@@ -274,8 +276,126 @@ class ggsheet
         }
 	return $values;
   }
-	
-  
+
+  public function backup($db) {
+
+	$today = date("ymd");
+	$visitors = $this->info();
+
+    //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	$sql = "CREATE TABLE IF NOT EXISTS Visitors(
+		yymmdd 		varchar(10) 	NOT NULL,
+		id		integer		NOT NULL,
+		sns		varchar(20)	NOT NULL,
+		email		varchar(30)	NOT NULL,
+		collect_dt	datetime	NOT NULL,
+		visit_cnt	integer		NOT NULL,
+		visit_dt	datetime	default NULL,
+		mail_ty		varchar(10)	default NULL,
+		coupon_num	varchar(15)	default NULL,
+		fv_mail_dt	datetime	default NULL,
+		rv_mail_dt	datetime	default NULL,
+		lv_mail_dt	datetime	default NULL,
+		hv_mail_dt	datetime	default NULL,
+		coupon_used_dt  datetime	default NULL)";
+
+	//print_r("$sql \n");
+	try {
+		$db->exec($sql);
+		//print("Visitors table created!\n");
+	}catch(Exception $e) {
+		print_r($db->errorInfo());
+		die($e);
+	}
+
+	$sql = "DELETE FROM Visitors WHERE yymmdd = $today";
+	//print_r("$sql \n");
+	try {
+		$db->exec($sql);
+		//print("Duplicate deleted for today($today)!\n");
+	}catch(Exception $e) {
+		die($e);
+	}
+
+	$sql = "INSERT INTO Visitors(
+			yymmdd,
+			id,
+			sns,
+			email,
+			collect_dt,
+			visit_cnt,
+			visit_dt,
+			mail_ty,
+			coupon_num,
+			fv_mail_dt,
+			rv_mail_dt,
+			lv_mail_dt,
+			hv_mail_dt,
+			coupon_used_dt)
+		VALUES(
+			:yymmdd,
+			:id,
+			:sns,
+			:email,
+			:collect_dt,
+			:visit_cnt,
+			:visit_dt,
+			:mail_ty,
+			:coupon_num,
+			:fv_mail_dt,
+			:rv_mail_dt,
+			:lv_mail_dt,
+			:hv_mail_dt,
+			:coupon_used_dt
+		)";
+
+	//print_r("$sql \n");
+
+	$stmt = null;
+	try {
+		$stmt =  $db->prepare($sql);
+	}catch(Exception $e) {
+		print_r($db->errorInfo());
+		die($e);
+	}
+
+	$tot = count($visitors);
+	$inx =0;
+	$prev_per = 10;
+	print_r("tot: <b>". $tot . " </b> <br>" );
+	foreach($visitors as $v) {
+		try {
+			$stmt->bindParam(":yymmdd", 	$today);
+			$stmt->bindParam(":id",		$v->id);
+			$stmt->bindParam(":sns",	$v->sns);
+			$stmt->bindParam(":email",	$v->email);
+			$stmt->bindParam(":collect_dt",	$v->collect_dt);
+			$stmt->bindParam(":visit_cnt",	$v->visit_cnt);
+			$stmt->bindParam(":visit_dt",	$v->visit_dt);
+			$stmt->bindParam(":mail_ty",	$v->mail_ty);
+			$stmt->bindParam(":coupon_num",	$v->coupon_num);
+			$stmt->bindParam(":fv_mail_dt",	$v->fv_mail_dt);
+			$stmt->bindParam(":rv_mail_dt",	$v->rv_mail_dt);
+			$stmt->bindParam(":lv_mail_dt",	$v->lv_mail_dt);
+			$stmt->bindParam(":hv_mail_dt",	$v->hv_mail_dt);
+			$stmt->bindParam(":coupon_used_dt", $v->coupon_used_dt);
+
+			$stmt->execute();
+			$inx = $inx + 1;
+			$per = ( $inx / $tot ) * 100;
+			if($per > $prev_per) {
+				print_r( $prev_per . "% " );
+				$prev_per = $prev_per + 10;
+			}
+		}catch(Exception $e) {
+			print_r($db->errorInfo());
+			die($e);
+		}	
+	}
+	return $visitors;
+  } /* end of backup */
+
 
 
 }

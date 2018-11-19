@@ -1,7 +1,7 @@
 @include ('coupon.header')
 
 <div class="title m-b-md">
-sheet
+show backup - {{$type}}
 </div>
 
 @include ('coupon.sheettab')

@@ -1,7 +1,7 @@
 @include ('coupon.header')
 
 <div class="title m-b-md">
-show
+show - {{$type}}
 </div>
 <div class="content">
 <table>
