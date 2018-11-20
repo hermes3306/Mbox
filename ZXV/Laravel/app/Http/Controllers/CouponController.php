@@ -12,6 +12,11 @@ Use App\Classes\visitor;
 
 class CouponController extends Controller
 {
+	function yymmdd() {
+		$sql = 'select distinct yymmdd from Visitors';	
+		$yymmdds = DB::connection()->select($sql);
+		return $yymmdds;
+	}
 
     function show($type=0)
     {
@@ -20,7 +25,15 @@ class CouponController extends Controller
 		else $sql = $sql . ' = ?';
 		
 		$coupons =	DB::connection()->select($sql, [$type]);
-		return view('coupon.show', ['coupons' => $coupons, 'type' => $type] );
+
+		$yymmdd  = 	date('ymd');
+		$yymmdds = $this->yymmdd();
+		$params  = ['coupons' 	=> $coupons, 
+					'type' 		=> $type, 
+					'yymmdd' 	=> $yymmdd, 
+					'yymmdds' => $yymmdds ];
+	   
+		return view('coupon.show',  $params);
     }
 
 	function sheetview()
@@ -28,7 +41,14 @@ class CouponController extends Controller
 		$ggsheet = new ggsheet();
 		$ggsheet->spreadsheetId = '1oyKX1Vkls8vri7GbCagxYNB_zN6SPnpPN6xlrtwbxeA';
 		$visitors = $ggsheet->info();
-		return view('coupon.sheetview', ['visitors' => $visitors] );
+
+		$yymmdd  = 	date('ymd');
+		$yymmdds = $this->yymmdd();
+		$params  = ['visitors' 	=> $visitors, 
+					'yymmdd' 	=> $yymmdd, 
+					'yymmdds' => $yymmdds ];
+
+		return view('coupon.sheetview', $params);
 	}
 
 	function backup() 
@@ -38,10 +58,18 @@ class CouponController extends Controller
 		$db = DB::connection()->getPDO();
 		
 		$visitors = $ggsheet->backup($db);
-		return view('coupon.backup',  ['visitors' => $visitors] );
+
+		$yymmdd  = 	date('ymd');
+		$yymmdds = $this->yymmdd();
+
+		$params  = ['visitors' 	=> $visitors, 
+					'yymmdd' 	=> $yymmdd, 
+					'yymmdds' => $yymmdds ];
+
+		return view('coupon.backup', $params);
 	}
 
-    function showbackup($type=0)
+    function showbackup($type=0, $yymmdd=0)
     {
 		$where_clause = "";
 		switch($type) {
@@ -50,10 +78,25 @@ class CouponController extends Controller
 			case 3: $where_clause = "where mail_ty in ('5회이상', '우수고객')"; break;
 			case 4: $where_clause = "where mail_ty in ('휴먼고객')"; break;
 		}
+
+		if($type != 0) {
+			if($yymmdd !=0 ) $where_clause .= " and yymmdd = '$yymmdd'";
+		}else {
+			if($yymmdd !=0) $where_clause .= "where yymmdd = '$yymmdd'";
+		}
 		
 		$sql = "select * from Visitors " . $where_clause;
 		$visitors =	DB::connection()->select($sql);
-		return view('coupon.showbackup', ['visitors' => $visitors, 'type' => $type] );
+
+		$yymmdd  = 	date('ymd');
+		$yymmdds = $this->yymmdd();
+
+		$params  = ['visitors' 	=> $visitors, 
+					'type'		=> $type,
+					'yymmdd' 	=> $yymmdd, 
+					'yymmdds' 	=> $yymmdds ];
+
+		return view('coupon.showbackup', $params);
 	}
 
 }
