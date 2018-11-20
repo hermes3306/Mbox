@@ -1,21 +1,28 @@
 @include ('coupon.header')
 
 <div class="title m-b-md">
-sql - {{$type}}
+sql - {{$sql}}
 </div>
 
-<p id="result"> </p>
+<p id="sqlresult"> result </p>
 
-<button type="button" onclick="mysql()"> SQL </button>
+<button type="button" onclick="myquery()"> SQL </button>
+
 <script>
-function mysql() {
+function myquery() {
+    alert("1");
     var xhttp = new XMLHttpRequest();
+    alert("2");
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("result").innerHTML = this.responseText;
-         }
+            document.getElementById("sqlresult").innerHTML = this.responseText;
+        }
     };
-    xhttp.open("GET", "/asql" . "?q='select * from Visitors'", true);
+
+    alert("2");
+    xhttp.open("GET", "/asql/select * from dual", true);
+    alert("2");
+    alert($sql);
     xhttp.send();
 }
 </script>
