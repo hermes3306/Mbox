@@ -20,6 +20,26 @@
                 margin: 0;
             }
 
+            table {
+		width: 100%;
+		border-top: 1px solid #C0C0C0;
+		border-collapse: collapse;
+
+            }
+
+            th {
+		background-color: #C0C0C0;
+		border-bottom: 1px solid #C0C0C0;
+		padding: 10px;
+            }
+
+            td {
+		border-bottom: 1px solid #C0C0C0;
+		padding: 10px;
+            }
+		
+		
+
             .full-height {
                 height: 100vh;
             }
