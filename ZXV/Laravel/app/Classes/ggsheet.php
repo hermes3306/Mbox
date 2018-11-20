@@ -363,7 +363,6 @@ class ggsheet
 	$tot = count($visitors);
 	$inx =0;
 	$prev_per = 10;
-	print_r("tot: <b>". $tot . " </b> <br>" );
 	foreach($visitors as $v) {
 		try {
 			$stmt->bindParam(":yymmdd", 	$today);
@@ -385,7 +384,7 @@ class ggsheet
 			$inx = $inx + 1;
 			$per = ( $inx / $tot ) * 100;
 			if($per > $prev_per) {
-				print_r( $prev_per . "% " );
+				print_r( $prev_per . "%" );
 				$prev_per = $prev_per + 10;
 			}
 		}catch(Exception $e) {
@@ -393,6 +392,7 @@ class ggsheet
 			die($e);
 		}	
 	}
+	print_r( $prev_per . "%" );
 	return $visitors;
   } /* end of backup */
 

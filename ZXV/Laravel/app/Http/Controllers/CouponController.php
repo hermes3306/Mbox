@@ -51,6 +51,17 @@ class CouponController extends Controller
 		return view('coupon.sheetview', $params);
 	}
 
+	function abackup() 
+	{
+		$ggsheet = new ggsheet();
+		$ggsheet->spreadsheetId = '1oyKX1Vkls8vri7GbCagxYNB_zN6SPnpPN6xlrtwbxeA';
+		$db = DB::connection()->getPDO();
+		
+		$visitors = $ggsheet->backup($db);
+		return "Total: " . count($visitors) . " backed up...";
+
+	}
+
 	function backup() 
 	{
 		$ggsheet = new ggsheet();

@@ -3,6 +3,23 @@
 <body>
 
 <div class="top-right links">
+
+<text id="msg"> <font color="00FFFF"> </font></text>
+
+<button type="button" onclick="backup()"> backup asyn. </button>
+<script>
+function backup() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+    	    document.getElementById("msg").innerHTML = this.responseText;
+         }
+    };
+    xhttp.open("GET", "/sheet/abackup", true);
+    xhttp.send();
+}
+</script>
+
 <a href='/'>all</a> 
 <a href='/show/1'>1</a> 
 <a href='/show/2'>2</a> 
