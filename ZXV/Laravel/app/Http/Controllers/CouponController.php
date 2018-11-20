@@ -108,6 +108,15 @@ class CouponController extends Controller
 					'yymmdds' 	=> $yymmdds ];
 
 		return view('coupon.showbackup', $params);
-	}
+    }
+    function sql() {
+	    	return view('coupon.sql');
+    }
+
+    function asql($sql) {
+		$result =	DB::connection()->select($sql);
+	    	return "OK";
+
+    }
 
 }

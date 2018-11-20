@@ -22,3 +22,5 @@ Route::get('sheet/view',         		['uses' => 'CouponController@sheetview']);
 Route::get('sheet/backup',       		['uses' => 'CouponController@backup']);
 Route::get('sheet/abackup',       		['uses' => 'CouponController@abackup']);
 Route::get('showbackup/{type}/{yymmdd}',	['uses' => 'CouponController@showbackup']);
+Route::get('sql',				['uses' => 'CouponController@sql']);
+Route::get('asql',				['uses' => 'CouponController@asql']);

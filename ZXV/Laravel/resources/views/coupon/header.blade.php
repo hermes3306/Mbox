@@ -47,6 +47,7 @@ function backup() {
 <a id="a2" href='/showbackup/2/{{$yymmdd}}'>2</a> 
 <a id="a3" href='/showbackup/3/{{$yymmdd}}'>3</a> 
 <a id="a4" href='/showbackup/4/{{$yymmdd}}'>4</a> 
+<a href='/sql'>sql</a>
 
 </div>
 
@@ -63,3 +64,4 @@ function myFunction() {
     document.getElementById("a4").href = "/showbackup/4/" + s;
 }
 </script>
+
