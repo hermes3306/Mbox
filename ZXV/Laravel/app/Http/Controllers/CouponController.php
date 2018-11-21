@@ -145,8 +145,4 @@ class CouponController extends Controller
 		return ($ret_str);
     }
 
-    function atable($tname) {
-	    return( $this->asql("select * from " . $tname );
-    }
-
 }

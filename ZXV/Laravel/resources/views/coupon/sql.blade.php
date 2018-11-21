@@ -4,7 +4,7 @@
 sql
 </div>
 
-<input type="text" id="sqlin" size=35 value="select * from Visitors">
+<input type="text" id="sqlin" size=85 value="SELECT *FROM sqlite_master WHERE type = 'table'">
 <button type="button" onclick="myquery()"> Execute </button>
 
 <p id="sqlresult">  </p>
