@@ -121,10 +121,39 @@ class CouponController extends Controller
     }
 
     function asql($sql) {
+		$ret_str = "<table width=80%>";
 		$result =	DB::connection()->select($sql);
-		print_r($sql);
-	    	return "OK";
+		$keys = array();
+		if(count($result) > 0) {
+			$r = $result[0];
+			$ret_str .= "<tr>";
+			foreach ($r as $k => $v) {
+				$ret_str .= "<th>$k<th>";
+			}
+			$ret_str .= "</tr>";
+		}else {
+			return "No Result!";
+		} 
 
+		$inx = 0;
+		$table_hr = "<tr>";
+		foreach($result as $r) {
+
+			$ret_str .= "<tr>";
+			foreach($r as $k => $v) {
+				if($inx==0) {
+					$table_hr .= "<th>$k</th>";
+				}
+				$ret_str .= "<td>$v</td>"; 
+			}
+			$ret_str .= "</tr>";
+
+			if($inx==0) $ret_str = $table_hr . "</tr>" .  $ret_str  ;
+			$inx = $inx+1;
+		}
+
+		$ret_str .= "</table>";
+		return ($ret_str);
     }
 
 }
