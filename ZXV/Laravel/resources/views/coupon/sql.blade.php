@@ -6,6 +6,7 @@ sql
 
 <input type="text" id="sqlin" size=35 value="select * from Visitors">
 <button type="button" onclick="myquery()"> Execute </button>
+
 <p id="sqlresult">  </p>
 
 

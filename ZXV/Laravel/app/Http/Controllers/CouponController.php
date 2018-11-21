@@ -121,22 +121,10 @@ class CouponController extends Controller
     }
 
     function asql($sql) {
-		$ret_str = "<table width=80%>";
+	    $ret_str = "";
 		$result =	DB::connection()->select($sql);
-		$keys = array();
-		if(count($result) > 0) {
-			$r = $result[0];
-			$ret_str .= "<tr>";
-			foreach ($r as $k => $v) {
-				$ret_str .= "<th>$k<th>";
-			}
-			$ret_str .= "</tr>";
-		}else {
-			return "No Result!";
-		} 
-
 		$inx = 0;
-		$table_hr = "<tr>";
+		$table_hr = "<table width=80%><tr>";
 		foreach($result as $r) {
 
 			$ret_str .= "<tr>";
@@ -148,12 +136,17 @@ class CouponController extends Controller
 			}
 			$ret_str .= "</tr>";
 
+
 			if($inx==0) $ret_str = $table_hr . "</tr>" .  $ret_str  ;
 			$inx = $inx+1;
 		}
 
 		$ret_str .= "</table>";
 		return ($ret_str);
+    }
+
+    function atable($tname) {
+	    return( $this->asql("select * from " . $tname );
     }
 
 }
