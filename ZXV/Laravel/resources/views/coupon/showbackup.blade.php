@@ -1,6 +1,6 @@
 @include ('coupon.header')
 
-<div class="title m-b-md">
+<div id="mytitle" class="title m-b-md">
 show backup - {{$type}}
 </div>
 

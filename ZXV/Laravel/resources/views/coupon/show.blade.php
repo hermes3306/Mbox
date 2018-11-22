@@ -1,9 +1,10 @@
 @include ('coupon.header')
 
-<div class="title m-b-md">
+<div id="mytitle" class="title m-b-md">
 show - {{$type}}
 </div>
-<div class="content">
+
+<div id="mycontent" class="content">
 <table>
 <tr>
 <th>coupon</th>

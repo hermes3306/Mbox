@@ -89,20 +89,7 @@ function myFunction() {
 }
 
 function myTables() {
-	var x = document.getElementById("tables");
-	var i = x.selectedIndex;
-	var s = x.options[i].text;
-	var sql = "select * from " + s ;
+	var x = document.getElementById("");
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("mytitle").innerHTML = "table - " + s ;
-            document.getElementById("mycontent").innerHTML = this.responseText;
-        }
-    };
-
-	xhttp.open("GET", "/asql/" + sql, true);
-	xhttp.send();
 }
 </script>

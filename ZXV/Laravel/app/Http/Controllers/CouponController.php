@@ -18,6 +18,12 @@ class CouponController extends Controller
 		return $yymmdds;
 	}
 
+	function tables() {
+		$sql = "SELECT name FROM sqlite_master WHERE type = 'table'";
+		$tables = DB::connection()->select($sql);
+		return $tables;
+    }
+
     function show($type=0)
     {
 		$sql = 'select coupon,type,userid,email,created_at,issued_at,sent_at,used_at from Coupons where type';
@@ -31,7 +37,8 @@ class CouponController extends Controller
 		$params  = ['coupons' 	=> $coupons, 
 					'type' 		=> $type, 
 					'yymmdd' 	=> $yymmdd, 
-					'yymmdds' => $yymmdds ];
+					'tables'	=> $this->tables(),
+					'yymmdds' => $this->yymmdd() ];
 	   
 		return view('coupon.show',  $params);
     }
@@ -46,6 +53,7 @@ class CouponController extends Controller
 		$yymmdds = $this->yymmdd();
 		$params  = ['visitors' 	=> $visitors, 
 					'yymmdd' 	=> $yymmdd, 
+					'tables'	=> $this->tables(),
 					'yymmdds' => $yymmdds ];
 
 		return view('coupon.sheetview', $params);
@@ -75,6 +83,7 @@ class CouponController extends Controller
 
 		$params  = ['visitors' 	=> $visitors, 
 					'yymmdd' 	=> $yymmdd, 
+					'tables'	=> $this->tables(),
 					'yymmdds' => $yymmdds ];
 
 		return view('coupon.backup', $params);
@@ -105,6 +114,7 @@ class CouponController extends Controller
 		$params  = ['visitors' 	=> $visitors, 
 					'type'		=> $type,
 					'yymmdd' 	=> $yymmdd, 
+					'tables'	=> $this->tables(),
 					'yymmdds' 	=> $yymmdds ];
 
 		return view('coupon.showbackup', $params);
@@ -114,8 +124,9 @@ class CouponController extends Controller
 		$yymmdds = $this->yymmdd();
 		$sql = "select * from Visitors";
 		$params  = [ 	'yymmdd' 	=> $yymmdd, 
-				'sql'		=> $sql,
-				'yymmdds' 	=> $yymmdds ];
+					'sql'		=> $sql,
+					'tables'	=> $this->tables(),
+					'yymmdds' 	=> $yymmdds ];
 
 	    	return view('coupon.sql', $params);
     }
@@ -144,5 +155,4 @@ class CouponController extends Controller
 		$ret_str .= "</table>";
 		return ($ret_str);
     }
-
 }

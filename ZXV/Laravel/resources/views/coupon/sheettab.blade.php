@@ -1,4 +1,4 @@
-<div class="content">
+<div id="mycontent" class="content">
 <table>
 <tr>
 <th>id</th>
