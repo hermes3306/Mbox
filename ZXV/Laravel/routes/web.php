@@ -24,3 +24,12 @@ Route::get('sheet/abackup',       		['uses' => 'CouponController@abackup']);
 Route::get('showbackup/{type}/{yymmdd}',	['uses' => 'CouponController@showbackup']);
 Route::get('sql',				['uses' => 'CouponController@sql']);
 Route::get('asql/{sql}',			['uses' => 'CouponController@asql']);
+
+
+Route::get('/home', function() {
+	return view('home');
+});
+
+Route::get('/report', function() {
+	return view('report');
+});
