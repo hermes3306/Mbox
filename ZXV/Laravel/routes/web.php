@@ -16,15 +16,15 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/',        		 	 	['uses' => 'CouponController@show']);
-Route::get('show/{type}',        		['uses' => 'CouponController@show']);
-Route::get('sheet/view',         		['uses' => 'CouponController@sheetview']);
-Route::get('sheet/backup',       		['uses' => 'CouponController@backup']);
-Route::get('sheet/abackup',       		['uses' => 'CouponController@abackup']);
+Route::get('/',        		 	 			['uses' => 'CouponController@show']);
+Route::get('show/{type}',        			['uses' => 'CouponController@show']);
+Route::get('sheet/view',         			['uses' => 'CouponController@sheetview']);
+Route::get('sheet/backup',       			['uses' => 'CouponController@backup']);
+Route::get('sheet/abackup',       			['uses' => 'CouponController@abackup']);
 Route::get('showbackup/{type}/{yymmdd}',	['uses' => 'CouponController@showbackup']);
-Route::get('sql',				['uses' => 'CouponController@sql']);
-Route::get('asql/{sql}',			['uses' => 'CouponController@asql']);
-
+Route::get('sql',							['uses' => 'CouponController@sql']);
+Route::get('asql/{sql}/{ty}',				['uses' => 'CouponController@asql']);
+Route::get('asheet',						['uses' => 'CouponController@asheet']);
 
 Route::get('/home', function() {
 	return view('home');

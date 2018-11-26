@@ -102,7 +102,7 @@ function myTables() {
         }
     };
 
-	xhttp.open("GET", "/asql/" + sql, true);
+	xhttp.open("GET", "/asql/" + sql +"/table", true);
 	xhttp.send();
 }
 </script>

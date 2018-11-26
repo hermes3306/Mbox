@@ -67,7 +67,6 @@ class CouponController extends Controller
 		
 		$visitors = $ggsheet->backup($db);
 		return "Total: " . count($visitors) . " backed up...";
-
 	}
 
 	function backup() 
@@ -131,28 +130,62 @@ class CouponController extends Controller
 	    	return view('coupon.sql', $params);
     }
 
-    function asql($sql) {
+	function asheet() {
+		$ret_str = "";
+		$inx = 0;
+		$ggsheet = new ggsheet();
+		$ggsheet->spreadsheetId = '1oyKX1Vkls8vri7GbCagxYNB_zN6SPnpPN6xlrtwbxeA';
+		$visitors = $ggsheet->info();
+		$table_hr = "<table width=80%><tr>";
+		foreach($visitors as $r) {
+				$ret_str .= "<tr>";
+				foreach($r as $k => $v) {
+					if($inx==0) {
+						$table_hr .= "<th>$k</th>";
+					}
+					$ret_str .= "<td>$v</td>"; 
+				}
+				$ret_str .= "</tr>";
+
+
+				if($inx==0) $ret_str = $table_hr . "</tr>" .  $ret_str  ;
+				$inx = $inx+1;
+		}
+		return ($ret_str);
+	}
+
+    function asql($sql, $ty="t") {
 	    $ret_str = "";
 		$result =	DB::connection()->select($sql);
 		$inx = 0;
-		$table_hr = "<table width=80%><tr>";
-		foreach($result as $r) {
 
-			$ret_str .= "<tr>";
-			foreach($r as $k => $v) {
-				if($inx==0) {
-					$table_hr .= "<th>$k</th>";
+		if($ty == "table") {
+			$table_hr = "<table width=80%><tr>";
+			foreach($result as $r) {
+
+				$ret_str .= "<tr>";
+				foreach($r as $k => $v) {
+					if($inx==0) {
+						$table_hr .= "<th>$k</th>";
+					}
+					$ret_str .= "<td>$v</td>"; 
 				}
-				$ret_str .= "<td>$v</td>"; 
+				$ret_str .= "</tr>";
+
+
+				if($inx==0) $ret_str = $table_hr . "</tr>" .  $ret_str  ;
+				$inx = $inx+1;
 			}
-			$ret_str .= "</tr>";
 
-
-			if($inx==0) $ret_str = $table_hr . "</tr>" .  $ret_str  ;
-			$inx = $inx+1;
+			$ret_str .= "</table>";
+ 	   }else if($ty == "option") {
+			foreach($result as $r) {
+				foreach($r as $k => $v) {
+					$ret_str .= "<option value='$v'>$v</option>";
+				}
+			}
 		}
-
-		$ret_str .= "</table>";
 		return ($ret_str);
-    }
+	}
+
 }

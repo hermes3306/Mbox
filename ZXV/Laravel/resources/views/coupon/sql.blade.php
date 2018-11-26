@@ -20,7 +20,7 @@ function myquery() {
     };
 
     var sql = document.getElementById("sqlin").value;
-    xhttp.open("GET", "/asql/" + sql , true);
+    xhttp.open("GET", "/asql/" + sql + "/table" , true);
     xhttp.send();
 }
 </script>
